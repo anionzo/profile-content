@@ -1,0 +1,15 @@
+{
+  "name": "Mai Trung Tiến",
+  "title": "Full Stack Developer",
+  "titleEn": "Full Stack Developer",
+  "tagline": "Phần mềm nhà trường: cổng sinh viên, đào tạo, điều hành khoa.",
+  "taglineEn": "University software: student portal, training, faculty work.",
+  "avatar": "/images/avatar.jpg",
+  "location": "TP. Hồ Chí Minh, Việt Nam",
+  "locationEn": "Ho Chi Minh City, Vietnam",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "languages": ["vi", "en"],
+  "resumeUrl": "/files/resume.pdf",
+  "availableForWork": true,
+  "theme": "system"
+}

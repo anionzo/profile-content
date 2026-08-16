@@ -1,0 +1,18 @@
+[
+  {
+    "id": "exp-idx",
+    "company": "IDX HUIT",
+    "role": "Full Stack Developer",
+    "startDate": "2025-03",
+    "endDate": null,
+    "location": "TP. Hồ Chí Minh",
+    "description": "Tham gia phát triển hệ thống quản lý đào tạo và sinh viên phục vụ hơn 10.000 người dùng tại HUIT.",
+    "highlights": [
+      "Xây dựng và bảo trì RESTful API bằng ASP.NET Core .NET 8 cho các module sinh viên, bài thi, báo cáo và quản trị dữ liệu",
+      "Tối ưu truy vấn SQL Server, pagination và filtering nhằm cải thiện tốc độ tải dữ liệu ở các màn hình báo cáo",
+      "Phát triển các module báo cáo động, cấu hình cột, bộ lọc dữ liệu và xuất Excel phục vụ nghiệp vụ quản lý",
+      "Xây dựng giao diện với Angular và Next.js, tích hợp API, xử lý trạng thái form và tối ưu trải nghiệm người dùng"
+    ],
+    "tech": [".NET 8", "ASP.NET Core", "Angular", "Next.js", "SQL Server"]
+  }
+]

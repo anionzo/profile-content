@@ -1,0 +1,18 @@
+[
+  {
+    "id": "edu-2",
+    "school": "Trường Đại học Công Thương TP. Hồ Chí Minh (HUIT)",
+    "degree": "Thạc sĩ Công nghệ Thông tin",
+    "startYear": 2024,
+    "endYear": null,
+    "description": "Đang học"
+  },
+  {
+    "id": "edu-1",
+    "school": "Trường Đại học Công Thương TP. Hồ Chí Minh (HUIT)",
+    "degree": "Cử nhân Công nghệ Thông tin",
+    "startYear": 2020,
+    "endYear": 2024,
+    "description": "Việt Nam"
+  }
+]

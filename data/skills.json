@@ -1,0 +1,39 @@
+{
+  "categories": [
+    {
+      "name": "Backend",
+      "items": [
+        { "name": ".NET 8", "level": 4 },
+        { "name": "ASP.NET Core", "level": 4 },
+        { "name": "RESTful API", "level": 4 },
+        { "name": "Entity Framework Core", "level": 3 }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "items": [
+        { "name": "Angular", "level": 4 },
+        { "name": "Next.js", "level": 3 },
+        { "name": "TypeScript", "level": 4 },
+        { "name": "HTML/CSS", "level": 4 }
+      ]
+    },
+    {
+      "name": "Database",
+      "items": [
+        { "name": "SQL Server", "level": 4 },
+        { "name": "Query optimization", "level": 3 },
+        { "name": "Stored procedure", "level": 3 }
+      ]
+    },
+    {
+      "name": "Công cụ",
+      "items": [
+        { "name": "Git", "level": 4 },
+        { "name": "Swagger / Postman", "level": 4 },
+        { "name": "Excel export", "level": 4 },
+        { "name": "Agile/Scrum", "level": 3 }
+      ]
+    }
+  ]
+}
