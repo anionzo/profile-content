@@ -21,7 +21,7 @@ Tên người vẫn là Mai Trung Tiến. Handle chỉ là khóa. Khóa mà đ�
 
 ## Những chỗ đang trỏ về đó
 
-github.com/anionzo. linkedin.com/in/anionzo. x.com/anionzo. facebook.com/anionzo. instagram.com/anionzo. Mail: anionzo.ai@gmail.com.
+github.com/anionzo. linkedin.com/in/anionzo. x.com/anionzo_vn. facebook.com/anionzo. instagram.com/anionzo. Mail: anionzo.ai@gmail.com.
 
 Site này đọc hết từ hai file JSON. Đổi URL một lần, build lại, xong. Không có mạng nào hardcode trong component. Lần trước mình để email trống vì không muốn đoán Gmail. Rồi lấy đúng địa chỉ trên CV. Đừng bịa field cho đủ form.
 
