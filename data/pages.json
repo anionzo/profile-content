@@ -1,0 +1,24 @@
+{
+  "band": {
+    "body": "Đá trắng giữ form. Nắng hổ phách và một vệt son giữ nhiệt — đủ sắc để khắc, đủ mềm để đứng lại.",
+    "bodyEn": "White stone keeps the form. Amber sun and a single vermillion mark keep the heat — sharp enough to carve, soft enough to stay.",
+    "cta": "Bắt đầu một việc cùng nhau",
+    "ctaEn": "Start something together"
+  },
+  "blog": {
+    "lede": "Bài nháp không xuất hiện ở đây khi build production.",
+    "ledeEn": "Draft posts stay hidden in the production build."
+  },
+  "projects": {
+    "lede": "Hệ thống mình đã làm và đang bảo trì — lọc theo tag hoặc tìm nhanh.",
+    "ledeEn": "Systems I've built and still maintain — filter by tag or search."
+  },
+  "notFound": {
+    "title": "Trang này không có trên bản đồ.",
+    "titleEn": "This page is off the map.",
+    "body": "Có thể slug đã đổi, hoặc bài vẫn đang nháp.",
+    "bodyEn": "The slug may have moved, or the post is still a draft.",
+    "home": "Về trang chủ",
+    "homeEn": "Back home"
+  }
+}

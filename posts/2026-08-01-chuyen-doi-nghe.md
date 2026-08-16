@@ -1,11 +1,13 @@
 ---
 title: "Chuyện đổi nghề"
+titleEn: "On changing the craft"
 slug: chuyen-doi-nghe
 date: 2026-08-01
 updated: 2026-08-16
 tags: [career, learning]
 cover: /images/og-cover.jpg
 excerpt: "Không phải nhảy việc. Là đổi chỗ đặt sự thật: từ trong component sang một chỗ có schema, từ làm cho có sang hệ thống nhỏ đủ dùng lâu."
+excerptEn: "Not a job hop. A move of where truth lives: out of components into a schema, from making something exist to a small system that lasts."
 status: published
 readingTimeOverride: null
 series: null
@@ -52,3 +54,45 @@ Lối kia là coi nó như hệ thống nhỏ: khuôn dữ liệu, đồng bộ,
 Mình chọn lối sau vì ban ngày đã quen nghĩ bằng hợp đồng dữ liệu. Đêm về không muốn nghĩ bằng file giao diện nữa.
 
 Đổi nghề, với mình, không phải đổi stack. Là đổi chỗ mình chịu khó giữ cho đúng.
+
+<!-- lang:en -->
+
+I did not change careers once. I changed where truth lives.
+
+At school and at IDX HUIT, truth lives in the database, the API, and each role's rights. For a long time my portfolio kept truth inside UI files. Editing one bio line felt like editing a product. That is a misplaced architecture smell, not proof of hard work.
+
+Three and a half years on the job taught me this earlier than I wanted to hear. The personal site is only where I finally listened late.
+
+## Before
+
+Everything hard-coded in components. Menu, name, tagline, even the work list. Matching a job title to a contract meant touching source, opening a branch, waiting on preview.
+
+That works for a one-page site. It breaks when you want a blog, a few English lines, or a copy fix without remembering which file owns the sentence.
+
+I once pasted one bio into three places. Edited one. Forgot two. Home said one thing. About said another. Nobody trusts the rest of the site.
+
+## Real work teaches the opposite
+
+A training system does not bury faculty names in UI files. Names live in a table. The API reads the table. The screen only renders.
+
+A portfolio does not need a database. It needs **one source**. JSON and Markdown are enough. A check before print. Bad field, build dies. Death at build is cheaper than death while someone else is reading.
+
+When I split two repos — one for copy and images, one for the site — it felt like splitting presentation from business rules. Not overkill. The same weekday reflex.
+
+## Where truth lives now
+
+One file holds name, title, tagline. One holds IDX HUIT work. One holds the 2020–2024 bachelor and the master's still running. Posts are Markdown with draft or published.
+
+The site reads at build time. Bad shape stops validation. No "works on my machine" public build missing a field.
+
+School work repos do not live on this site. That work is not public. The site tells the work. It does not open the back door.
+
+## If you stand between two paths
+
+One path is a portfolio "for show": one repo, copy mixed with code, ship once, forget.
+
+The other is a small system: data shape, sync, drafts, RSS. Costs an extra afternoon. Next copy edit does not require remembering a component.
+
+I chose the second because weekdays already think in data contracts. Nights I do not want to think in UI files anymore.
+
+Changing the craft, for me, is not changing the stack. It is changing where I bother to keep things true.

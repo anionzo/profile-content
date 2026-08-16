@@ -1,11 +1,13 @@
 ---
 title: "Báo cáo động và cái bẫy SELECT *"
+titleEn: "Dynamic reports and the SELECT * trap"
 slug: bao-cao-dong-va-excel
 date: 2025-11-08
 updated: 2026-08-16
 tags: [sql-server, dotnet, excel, learning]
 cover: /images/og-cover.jpg
 excerpt: "Cột bật tắt được, lọc theo khoa, xuất Excel. Nghe như UI. Phần đau nằm ở SQL, và ở chỗ xem lưới với xuất file không được đi chung một đường."
+excerptEn: "Toggle columns, filter by faculty, export Excel. Sounds like UI work. The pain is SQL — and not letting grid view and file export share one bad path."
 status: published
 readingTimeOverride: null
 series: null
@@ -64,3 +66,57 @@ Có hôm xuất lâu vì dữ liệu lớn. Im thì họ bấm lại. Bấm lạ
 Không mua BI. Không vẽ biểu đồ cho đẹp slide. Không hứa “real time”. Báo cáo nội bộ cần đúng, đủ cột, ra được file. Làm được ba thứ đó đã hơn một dashboard không ai mở lần hai.
 
 Nếu bạn đang thêm “xuất Excel” vào cuối sprint: hỏi trước xem lưới và xuất có đang đi chung một câu SQL không. Thường là có. Thường là chỗ đau.
+
+<!-- lang:en -->
+
+Internal school users do not ask what architecture you use. They ask: can this column hide, can I filter by faculty, can I export Excel, and why did this take twenty seconds.
+
+At IDX HUIT I build report modules for training and faculty systems. It sounds like frontend work. The pain is SQL — and the time I let two different jobs share one query.
+
+## What they actually need
+
+Not a colorful dashboard. A grid: the columns they work with, filters for faculty / cohort / term, then a file that opens in Excel on an office machine.
+
+Some want twenty columns. Some want code, name, class, status. Force everyone to see everything and they call it noisy. Hide columns in the UI but still select everything in SQL and they call it slow — and they are right.
+
+## Dynamic reports, for me, are four things
+
+Toggleable columns. Filters on the usual fields. Pagination on the grid. Export exactly the columns on screen to Excel.
+
+If every column mix is a stored procedure, you get a drawer that never closes. If one query pulls every column and the UI hides them, you punish SQL on every open.
+
+I took the middle path: a server-side column catalog. Field name, type, filterable, sortable. Frontend sends visible columns and filters. API checks fields against the catalog. No free-form strings in `ORDER BY`. That is SQL injection dressed as "flexibility".
+
+## Entity Framework is not the enemy. Or a hammer for every nail
+
+CRUD is fine with it. Heavy reports get deliberate SQL, a plan read, indexes on the filter pairs people hit weekly — faculty with term, class with status.
+
+Do not "conveniently" load a whole table and filter in memory. Fine on a dev box with two hundred rows. Dead on real school data.
+
+I hit that once. Local was fast. Real data spun the grid. The plan showed a scan. Not Angular. Me being lazy.
+
+## Viewing and exporting are not one job
+
+A screen of thousands of students that loads huge pages "for easy Excel" warps every normal open.
+
+Two paths:
+
+Grid view: small pages, count totals when needed, accept estimates if people only flip pages.
+
+Excel export: a separate path. Stream in batches. Do not `ToList()` the world then write a file. Serialize only visible columns. Vietnamese headers with diacritics. Not `Col1`, `Col2` — the person who gets the file will call you.
+
+I once shared one query for both. Grid waiters queued behind exporters. After the split, complaints dropped. Not because I was clever. Because I stopped making them share a line.
+
+## UI should not hide state
+
+Keep filters across reload. Lost filters lose trust: people think the system changed the numbers.
+
+Disable export while it runs. "Building file" beats an endless spinner. Say done when done. Say error when error. Silence is worse.
+
+One day a large export ran long. Silence made people click again. Two jobs. Slower still. That loop is not the user's fault.
+
+## What I did not do
+
+No BI buy. No charts for a pretty slide. No "real time" promise. Internal reports need to be right, have the right columns, and produce a file. Those three beat a dashboard nobody opens twice.
+
+If you are bolting "export Excel" onto the end of a sprint: ask first whether grid and export still share one SQL statement. Usually they do. Usually that is the wound.
