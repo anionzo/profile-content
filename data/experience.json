@@ -7,8 +7,8 @@
     "endDate": null,
     "location": "TP. Hồ Chí Minh",
     "locationEn": "Ho Chi Minh City",
-    "description": "Tham gia phát triển hệ thống quản lý đào tạo và sinh viên phục vụ hơn 10.000 người dùng tại HUIT.",
-    "descriptionEn": "Building training and student systems used by more than 10,000 people at HUIT.",
+    "description": "Tham gia phát triển hệ thống quản lý đào tạo và sinh viên phục vụ hơn 10.000 người dùng tại HUIT. Trước đó đã cộng tác với viện từ lúc còn đi học.",
+    "descriptionEn": "Building training and student systems used by more than 10,000 people at HUIT. Before that I worked with the institute part-time while still a student.",
     "highlights": [
       "Xây dựng và bảo trì RESTful API bằng ASP.NET Core .NET 8 cho các module sinh viên, bài thi, báo cáo và quản trị dữ liệu",
       "Tối ưu truy vấn SQL Server, pagination và filtering nhằm cải thiện tốc độ tải dữ liệu ở các màn hình báo cáo",
@@ -22,5 +22,27 @@
       "Build Angular and Next.js UI, wire APIs, handle form state, and keep the UX usable day to day"
     ],
     "tech": [".NET 8", "ASP.NET Core", "Angular", "Next.js", "SQL Server"]
+  },
+  {
+    "id": "exp-freelance",
+    "company": "Freelance",
+    "role": "Freelance Developer",
+    "startDate": "2023-03",
+    "endDate": "2025-02",
+    "location": "TP. Hồ Chí Minh",
+    "locationEn": "Ho Chi Minh City",
+    "description": "Nhận việc lẻ trong lúc đi học: web nhỏ cho người quen, sửa và bảo trì hệ thống có sẵn, viết tool nội bộ. Không dự án nào lớn, nhưng đủ loại để quen với việc bàn giao cho người dùng thật.",
+    "descriptionEn": "Took on small jobs while still studying: simple websites for people I knew, fixing and maintaining existing systems, writing internal tools. Nothing big, but enough variety to get used to handing work over to real users.",
+    "highlights": [
+      "Dựng web giới thiệu và landing page nhỏ, giao kèm hướng dẫn tự sửa nội dung",
+      "Sửa lỗi và bảo trì code người khác để lại — học cách đọc trước khi sửa",
+      "Viết tool xử lý dữ liệu/Excel cho nhu cầu văn phòng"
+    ],
+    "highlightsEn": [
+      "Built small brochure sites and landing pages, delivered with a guide so owners could edit content themselves",
+      "Fixed bugs and maintained code left behind by others — learned to read before changing",
+      "Wrote small data and Excel processing tools for office needs"
+    ],
+    "tech": [".NET", "SQL Server", "HTML/CSS", "JavaScript"]
   }
 ]
