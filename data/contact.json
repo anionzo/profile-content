@@ -9,12 +9,12 @@
   "helloEn": "Hi. I'm Tiến — I wrote the rest of this site. Skip the formal greeting. Write like you're messaging someone already at their desk.",
   "paragraphs": [
     "Ban ngày mình code và bảo trì các chức năng trên những hệ thống khác nhau, hoặc triển khai một project mới. Tối và cuối tuần mình đọc mail chậm hơn, nhưng mình vẫn đọc. Mail là chỗ mình trả lời tử tế nhất.",
-    "Bạn có thể viết vì muốn làm việc cùng, vì kẹt một chỗ kỹ thuật, vì thấy theme trên site này hơi lố, hoặc chỉ vì muốn chào. Tất cả đều được. Việc thật sự gấp thì gọi. Code, issue, pull request thì GitHub. LinkedIn nếu bạn quen trang trọng hơn. Đừng nhắn bốn mạng cùng lúc — mình sẽ lạc, rồi trả lời trễ hơn cả khi bạn chỉ gửi một thư.",
+    "Bạn có thể viết vì muốn làm việc cùng, vì kẹt một chỗ kỹ thuật, vì thấy theme trên site này hơi lố, hoặc chỉ vì muốn chào. Tất cả đều được. Việc thật sự gấp thì gọi. Code, issue, pull request thì GitHub. LinkedIn nếu bạn quen trang trọng hơn. Đừng nhắn mấy mạng cùng lúc — mình sẽ lạc, rồi trả lời trễ hơn cả khi bạn chỉ gửi một thư.",
     "Mail hữu ích thường có ba thứ: bạn đang làm gì, bạn cần mình làm gì, và hạn. Không cần dài. Cũng đừng ngắn đến mức mình phải hỏi lại từ đầu. Đính kèm ngữ cảnh cũng được, miễn đừng gửi một file không lời."
   ],
   "paragraphsEn": [
     "Weekdays I code and maintain features across different systems, or ship a new project. Nights and weekends I read mail more slowly, but I still read. Email is where I answer properly.",
-    "You can write because you want to work together, because you're stuck on something technical, because a theme on this site is a bit much, or just to say hello. All of that is fine. Call if it really can't wait. GitHub for code, issues, pull requests. LinkedIn if you prefer to start a little formal. Please don't ping four networks at once — I'll lose the thread, then answer later than if you'd sent one note.",
+    "You can write because you want to work together, because you're stuck on something technical, because a theme on this site is a bit much, or just to say hello. All of that is fine. Call if it really can't wait. GitHub for code, issues, pull requests. LinkedIn if you prefer to start a little formal. Please don't ping several networks at once — I'll lose the thread, then answer later than if you'd sent one note.",
     "A useful mail usually has three things: what you're doing, what you need from me, and when. It doesn't have to be long. Don't make it so short I have to ask everything again. Attach context if you want — just don't send a file with no words."
   ],
   "openLong": "Mình vẫn nhận việc phù hợp: backend .NET, frontend Angular hoặc Next, hoặc cả hai. Ở Sài Gòn, múi giờ Asia/Ho_Chi_Minh. Việc không khớp mình sẽ nói thẳng, không vòng.",
@@ -47,6 +47,6 @@
   },
   "sign": "Cảm ơn đã đọc tới đây. Cứ gửi.",
   "signEn": "Thanks for reading this far. Just send it.",
-  "handleNote": "Mọi mạng còn lại cũng là anionzo. Một tên, đỡ phải hỏi acc kia có phải mình không.",
-  "handleNoteEn": "Everywhere else is anionzo too. One name, so nobody has to ask if that other account is me."
+  "handleNote": "Phần lớn các mạng mình để anionzo. Mấy icon trên đây trỏ thẳng, khỏi phải hỏi acc kia có phải mình không.",
+  "handleNoteEn": "Most of my networks are anionzo. The icons here point straight there, so nobody has to ask if that other account is me."
 }
