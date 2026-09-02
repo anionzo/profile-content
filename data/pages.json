@@ -6,8 +6,8 @@
     "ctaEn": "Start something together"
   },
   "blog": {
-    "lede": "Bài nháp không xuất hiện ở đây khi build production.",
-    "ledeEn": "Draft posts stay hidden in the production build."
+    "lede": "Ghi chú từ việc làm thật: hệ thống trường, .NET, Angular, và những chỗ mình từng vấp.",
+    "ledeEn": "Notes from real work: school systems, .NET, Angular, and the places I tripped."
   },
   "projects": {
     "lede": "Hệ thống mình đã làm và đang bảo trì — lọc theo tag hoặc tìm nhanh.",
