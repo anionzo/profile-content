@@ -15,6 +15,12 @@
     "repoUrl": null,
     "repoPublic": false,
     "featured": true,
+    "role": "Full Stack Developer",
+    "org": "IDX HUIT",
+    "startDate": "2025-06",
+    "endDate": null,
+    "status": "maintained",
+    "tech": [".NET 8", "ASP.NET Core", "Angular", "Next.js", "SQL Server"],
     "date": "2025-06-01"
   },
   {
@@ -33,6 +39,12 @@
     "repoUrl": null,
     "repoPublic": false,
     "featured": true,
+    "role": "Full Stack Developer",
+    "org": "IDX HUIT",
+    "startDate": "2025-04",
+    "endDate": null,
+    "status": "maintained",
+    "tech": [".NET 8", "ASP.NET Core", "Angular", "SQL Server"],
     "date": "2025-04-01"
   },
   {
@@ -51,6 +63,12 @@
     "repoUrl": null,
     "repoPublic": false,
     "featured": false,
+    "role": "Full Stack Developer",
+    "org": "IDX HUIT",
+    "startDate": "2025-03",
+    "endDate": null,
+    "status": "maintained",
+    "tech": [".NET 8", "ASP.NET Core", "Angular", "SQL Server", "Excel export"],
     "date": "2025-03-01"
   }
 ]
