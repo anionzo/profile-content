@@ -15,7 +15,7 @@ canonicalUrl: null
 ogImage: null
 ---
 
-Mình không đổi nghề một lần. Mình đổi chỗ để sự thật nằm.
+Mình không đổi nghề theo kiểu nhảy việc. Thứ mình đổi là chỗ để sự thật nằm.
 
 Ở trường và ở IDX HUIT, sự thật nằm trong cơ sở dữ liệu, trong API, trong quyền của từng vai. Portfolio thì lâu nay mình để sự thật nằm trong file giao diện. Sửa một dòng bio giống sửa sản phẩm. Đó là dấu hiệu kiến trúc sai chỗ, không phải dấu hiệu mình chăm chỉ.
 
@@ -27,15 +27,15 @@ Mọi thứ cứng trong component. Menu, tên, tagline, cả danh sách việc.
 
 Cách đó chạy khi site còn một trang. Nó gãy khi mình muốn viết blog, muốn vài câu tiếng Anh, muốn sửa chữ mà không phải nhớ file nào đang giữ câu đó.
 
-Mình từng copy một đoạn bio vào ba chỗ. Rồi sửa một chỗ, quên hai chỗ. Trang chủ nói một kiểu. Trang giới thiệu nói kiểu khác. Không ai tin site còn lại.
+Mình từng copy một đoạn bio vào ba chỗ. Rồi sửa một chỗ, quên hai chỗ. Trang chủ nói một kiểu, trang giới thiệu nói kiểu khác, và thế là chẳng ai tin phần còn lại của site nữa.
 
 ## Việc thật dạy điều ngược lại
 
-Hệ thống quản lý đào tạo không nhét tên khoa vào file giao diện. Tên khoa nằm trong bảng. API đọc bảng. Màn hình chỉ render.
+Hệ thống quản lý đào tạo không nhét tên khoa vào file giao diện. Tên khoa nằm trong bảng, API đọc bảng, màn hình chỉ việc render.
 
-Portfolio không cần database. Nhưng nó cần **một chỗ là nguồn**. JSON và Markdown đủ. Một lớp kiểm tra trước khi in. Sai field thì build chết. Chết lúc build rẻ hơn chết lúc người khác đang đọc.
+Portfolio không cần database. Nhưng nó cần **một chỗ là nguồn**. JSON và Markdown đủ. Một lớp kiểm tra trước khi in. Sai field thì build chết, và chết lúc build vẫn rẻ hơn nhiều so với chết lúc người khác đang đọc.
 
-Khi mình tách hai kho — một kho chỉ chữ và ảnh, một kho chỉ site — cảm giác giống tách phần hiện ra khỏi phần nghiệp vụ. Không phải làm quá. Là cùng một phản xạ ban ngày.
+Khi mình tách hai kho — một kho chỉ chữ và ảnh, một kho chỉ site — cảm giác giống tách phần hiện ra khỏi phần nghiệp vụ. Không phải làm quá, chỉ là cùng một phản xạ mình dùng ban ngày.
 
 ## Bây giờ sự thật nằm ở đâu
 
@@ -43,7 +43,7 @@ Một file giữ tên, chức danh, câu dưới tên. Một file giữ việc �
 
 Site đọc lúc dựng trang. Sai khuôn thì lệnh kiểm tra dừng. Không có chuyện chạy được trên máy mình nhưng bản public thiếu field.
 
-Repo việc trường không nằm trên site này. Việc đó không public. Site chỉ kể việc, không mở cửa sau.
+Repo việc trường không nằm trên site này. Việc đó không public, nên site chỉ kể lại việc chứ không mở cửa sau.
 
 ## Nếu bạn đang đứng giữa hai lối
 
@@ -57,7 +57,7 @@ Mình chọn lối sau vì ban ngày đã quen nghĩ bằng hợp đồng dữ l
 
 <!-- lang:en -->
 
-I did not change careers once. I changed where truth lives.
+I did not change careers the way people hop jobs. What I changed is where truth lives.
 
 At school and at IDX HUIT, truth lives in the database, the API, and each role's rights. For a long time my portfolio kept truth inside UI files. Editing one bio line felt like editing a product. That is a misplaced architecture smell, not proof of hard work.
 
@@ -69,15 +69,15 @@ Everything hard-coded in components. Menu, name, tagline, even the work list. Ma
 
 That works for a one-page site. It breaks when you want a blog, a few English lines, or a copy fix without remembering which file owns the sentence.
 
-I once pasted one bio into three places. Edited one. Forgot two. Home said one thing. About said another. Nobody trusts the rest of the site.
+I once pasted one bio into three places. Edited one. Forgot two. Home said one thing, About said another, and after that nobody trusts the rest of the site.
 
 ## Real work teaches the opposite
 
-A training system does not bury faculty names in UI files. Names live in a table. The API reads the table. The screen only renders.
+A training system does not bury faculty names in UI files. Names live in a table, the API reads the table, and the screen only renders.
 
-A portfolio does not need a database. It needs **one source**. JSON and Markdown are enough. A check before print. Bad field, build dies. Death at build is cheaper than death while someone else is reading.
+A portfolio does not need a database. It needs **one source**. JSON and Markdown are enough. A check before print. A bad field kills the build, and dying at build time is still much cheaper than dying while someone else is reading.
 
-When I split two repos — one for copy and images, one for the site — it felt like splitting presentation from business rules. Not overkill. The same weekday reflex.
+When I split two repos — one for copy and images, one for the site — it felt like splitting presentation from business rules. Not overkill, just the same reflex I use on weekdays.
 
 ## Where truth lives now
 
@@ -85,7 +85,7 @@ One file holds name, title, tagline. One holds IDX HUIT work. One holds the 2020
 
 The site reads at build time. Bad shape stops validation. No "works on my machine" public build missing a field.
 
-School work repos do not live on this site. That work is not public. The site tells the work. It does not open the back door.
+School work repos do not live on this site. That work is not public, so the site tells the story of the work without opening the back door.
 
 ## If you stand between two paths
 

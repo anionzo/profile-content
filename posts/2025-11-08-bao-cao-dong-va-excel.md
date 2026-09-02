@@ -37,9 +37,9 @@ Mình chọn lối giữa: một catalog cột phía server. Tên field, kiểu,
 
 CRUD thì dùng bình thường. Báo cáo nặng thì mình viết SQL có chủ đích, nhìn plan, thêm index theo cặp lọc hay gặp — khoa với học kỳ, lớp với trạng thái, những thứ người ta bấm mỗi tuần.
 
-Đừng để một câu “tiện” lấy cả bảng rồi lọc trong bộ nhớ. Chạy được trên máy dev với hai trăm dòng. Chết trên dữ liệu trường.
+Đừng để một câu “tiện” lấy cả bảng rồi lọc trong bộ nhớ. Trên máy dev với hai trăm dòng thì chạy ngon, lên dữ liệu thật của trường là chết.
 
-Mình đã dính đúng chuyện đó một lần. Local nhanh. Lên dữ liệu thật thì lưới quay. Plan chỉ ra scan. Không phải Angular chậm. Là mình lười.
+Mình đã dính đúng chuyện đó một lần: local nhanh, lên dữ liệu thật thì lưới quay mãi. Mở execution plan ra thấy một cái table scan to đùng. Không phải Angular chậm. Là mình lười.
 
 ## Xem và xuất không phải một việc
 
@@ -51,21 +51,19 @@ Xem trên lưới: page nhỏ, đếm tổng khi cần, chấp nhận ước lư
 
 Xuất Excel: đường riêng. Stream theo lô. Không `ToList()` cả bộ rồi mới ghi file. Chỉ serialize cột đang bật. Đặt tên sheet và header bằng tiếng Việt có dấu. Đừng để `Cot1`, `Cot2` — người nhận file sẽ gọi điện.
 
-Mình từng để hai việc dùng chung query. Người xem lưới chờ người xuất. Tách ra xong thì khiếu nại giảm. Không phải vì mình giỏi. Vì mình thôi bắt họ xếp hàng chung.
+Mình từng để hai việc dùng chung query. Người xem lưới chờ người xuất. Tách ra xong thì khiếu nại giảm. Không phải vì mình làm gì giỏi, chỉ là thôi bắt họ xếp hàng chung.
 
 ## Giao diện đừng giấu trạng thái
 
-Giữ bộ lọc khi reload. Mất lọc là mất lòng tin: người ta tưởng hệ thống tự đổi số.
+Giữ bộ lọc khi reload. Mất bộ lọc là mất lòng tin, vì người ta tưởng hệ thống tự đổi số.
 
-Nút xuất tắt khi đang chạy. Một dòng chữ “đang tạo file” rõ hơn vòng xoay vô hạn. File xong thì nói file xong. Lỗi thì nói lỗi, đừng im.
+Nút xuất tắt khi đang chạy. Một dòng chữ “đang tạo file” rõ hơn vòng xoay vô hạn. File xong thì báo xong, lỗi thì báo lỗi, đừng im lặng.
 
-Có hôm xuất lâu vì dữ liệu lớn. Im thì họ bấm lại. Bấm lại thì hai job. Hai job thì chậm hơn. Vòng đó không phải lỗi người dùng.
+Có hôm xuất lâu vì dữ liệu lớn. Hệ thống im, họ bấm lại, thế là hai job chạy song song và càng chậm hơn. Cái vòng đó không phải lỗi người dùng.
 
-## Việc mình không làm
+Suốt mấy module đó mình không mua BI, không vẽ biểu đồ cho đẹp slide, cũng không hứa gì về real time. Báo cáo nội bộ chỉ cần đúng, đủ cột, ra được file, và ba thứ đó đã hơn một dashboard không ai mở lần hai.
 
-Không mua BI. Không vẽ biểu đồ cho đẹp slide. Không hứa “real time”. Báo cáo nội bộ cần đúng, đủ cột, ra được file. Làm được ba thứ đó đã hơn một dashboard không ai mở lần hai.
-
-Nếu bạn đang thêm “xuất Excel” vào cuối sprint: hỏi trước xem lưới và xuất có đang đi chung một câu SQL không. Thường là có. Thường là chỗ đau.
+Còn có một câu mình hay tự hỏi mỗi khi thấy chữ “xuất Excel” được thêm vào cuối sprint: lưới và xuất có đang đi chung một câu SQL không? Thường là có.
 
 <!-- lang:en -->
 
@@ -91,9 +89,9 @@ I took the middle path: a server-side column catalog. Field name, type, filterab
 
 CRUD is fine with it. Heavy reports get deliberate SQL, a plan read, indexes on the filter pairs people hit weekly — faculty with term, class with status.
 
-Do not "conveniently" load a whole table and filter in memory. Fine on a dev box with two hundred rows. Dead on real school data.
+Do not "conveniently" load a whole table and filter in memory. It runs fine on a dev box with two hundred rows and dies on real school data.
 
-I hit that once. Local was fast. Real data spun the grid. The plan showed a scan. Not Angular. Me being lazy.
+I hit exactly that once: fast locally, then the grid spun forever on real data. The execution plan showed one big table scan. Not Angular being slow. Me being lazy.
 
 ## Viewing and exporting are not one job
 
@@ -105,18 +103,16 @@ Grid view: small pages, count totals when needed, accept estimates if people onl
 
 Excel export: a separate path. Stream in batches. Do not `ToList()` the world then write a file. Serialize only visible columns. Vietnamese headers with diacritics. Not `Col1`, `Col2` — the person who gets the file will call you.
 
-I once shared one query for both. Grid waiters queued behind exporters. After the split, complaints dropped. Not because I was clever. Because I stopped making them share a line.
+I once shared one query for both. Grid waiters queued behind exporters. After the split, complaints dropped. Not because I did anything clever, I just stopped making them share a line.
 
 ## UI should not hide state
 
-Keep filters across reload. Lost filters lose trust: people think the system changed the numbers.
+Keep filters across reload. Losing filters loses trust, because people think the system changed the numbers on them.
 
-Disable export while it runs. "Building file" beats an endless spinner. Say done when done. Say error when error. Silence is worse.
+Disable export while it runs. "Building file" beats an endless spinner. Say done when it is done, say error when it fails, and never go silent.
 
-One day a large export ran long. Silence made people click again. Two jobs. Slower still. That loop is not the user's fault.
+One day a large export ran long. The system went quiet, people clicked again, and now two jobs ran side by side and everything got slower. That loop is not the user's fault.
 
-## What I did not do
+Across those modules I did not buy a BI tool, did not draw charts for a pretty slide, and did not promise real time. Internal reports only need to be right, have the right columns, and produce a file, and those three already beat a dashboard nobody opens twice.
 
-No BI buy. No charts for a pretty slide. No "real time" promise. Internal reports need to be right, have the right columns, and produce a file. Those three beat a dashboard nobody opens twice.
-
-If you are bolting "export Excel" onto the end of a sprint: ask first whether grid and export still share one SQL statement. Usually they do. Usually that is the wound.
+There is one question I keep asking myself whenever "export Excel" gets bolted onto the end of a sprint: are the grid and the export still sharing one SQL statement? Usually they are.

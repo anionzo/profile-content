@@ -3,7 +3,7 @@ title: "Ba thế giới, một site"
 titleEn: "Three worlds, one site"
 slug: ba-the-gioi-mot-site
 date: 2026-07-20
-updated: 2026-08-16
+updated: 2026-09-02
 tags: [astro, design, theme]
 cover: /images/og-cover.jpg
 excerpt: "Stoa, Mirai, Đồng, rồi Mực, Sơn, Gốm, Phố, Lụa, Nguyệt — cùng một HTML. Đổi da bằng một thuộc tính và một bảng màu."
@@ -15,7 +15,7 @@ canonicalUrl: null
 ogImage: null
 ---
 
-Cùng một bố cục: tên lớn, chân dung, việc đã làm. Đổi da bằng một thuộc tính trên thẻ `html`. Ban đầu chỉ có ba thế giới. Rồi thành chín. HTML không đổi. Chỉ bảng token và một ảnh nền.
+Cùng một bố cục: tên lớn, chân dung, việc đã làm. Đổi da bằng một thuộc tính trên thẻ `html`. Ban đầu chỉ có ba thế giới. Rồi thành chín. HTML không đổi, chỉ có bảng token và một ảnh nền thay theo.
 
 Mình viết Angular đủ để biết khi nào theme khác sản phẩm. Chín bản HTML là chín chỗ sửa khi thêm trang Liên hệ. Một layout cộng token thì thêm trang một lần. Đó là lý do, không phải vì mình thích sưu tập màu.
 
@@ -23,7 +23,7 @@ Mình viết Angular đủ để biết khi nào theme khác sản phẩm. Chín
 
 Trình duyệt nhớ thế giới đang chọn và sáng hay tối. F5 không mất. Một đoạn script trong phần đầu trang gắn class trước khi sơn, tránh chớp sai màu — chuyện đó khó chịu hơn một theme xấu.
 
-Header có một danh sách. Bấm một cái là đổi. Không có nhãn “Giao diện” cho dài. Tên thế giới đủ.
+Header có một danh sách. Bấm một cái là đổi. Không có nhãn “Giao diện” cho dài dòng, tên thế giới là đủ.
 
 Mỗi thế giới có giấy, mực, vàng hoặc patina, một vệt nhấn, một ảnh wash, và một bộ màu riêng cho khung trên cùng. Nút trong trang và nút trên dải mực không được lấy chung một màu — mình đã dính, kể ở dưới.
 
@@ -31,7 +31,7 @@ Mỗi thế giới có giấy, mực, vàng hoặc patina, một vệt nhấn, m
 
 **Stoa** là cẩm thạch mát, vàng lá, chữ khắc. Nút chính là mực đá. Muốn cảm giác sảnh, không phải cảm giác bảo tàng giả.
 
-**Mirai** là giấy kem, đĩa nắng hổ phách, một vệt son. Nhiệt độ lấy từ một conference site mình thích. Không lấy skyline. Không lấy đèn neon. Chỉ lấy nóng và kem.
+**Mirai** là giấy kem, đĩa nắng hổ phách, một vệt son. Nhiệt độ lấy từ một conference site mình thích. Không lấy skyline hay đèn neon, chỉ lấy cái nóng và màu kem.
 
 **Đồng** là patina, tâm sao, vòng đồng tâm. Wash là trống trong sảnh. Bài kia nói rõ hơn về lưới tròn. Ở đây chỉ cần biết: Đồng không phải dán SVG trống lên góc.
 
@@ -50,23 +50,19 @@ Mỗi cái phải sống được cả chữ dài trên trang Liên hệ, cả n
 
 ## Chỗ dễ gãy, mình đã gãy
 
-Token nút trùng nền. Nguyệt từng lấy nắng và mực cùng một họ bạc. Nút “Bắt đầu một việc cùng nhau” biến mất trên dải mực. Người xem tưởng trang thiếu nút. Là nút cùng màu nền.
+Token nút trùng nền. Nguyệt từng lấy nắng và mực cùng một họ bạc. Nút “Bắt đầu một việc cùng nhau” biến mất trên dải mực. Người xem tưởng trang thiếu nút, thật ra nút vẫn đó, chỉ là cùng màu với nền.
 
-Giờ dải mực dùng một token, trang dùng một token khác. Tách ra nghe vụn. Không tách thì tối nào cũng phải đoán.
+Giờ dải mực dùng một token, trang dùng một token khác. Tách ra nghe hơi vụn, nhưng không tách thì cứ mỗi lần bật dark mode lại phải đoán.
 
-Đường kẻ header từng là họa tiết lặp. Trông rẻ, như giấy gói. Đổi thành hai sợi tóc và một dấu giữa. Hình dấu đổi theo theme. Ít hơn. Rõ hơn.
+Đường kẻ header từng là họa tiết lặp. Trông rẻ, như giấy gói. Đổi thành hai sợi tóc và một dấu giữa. Hình dấu đổi theo theme. Ít chi tiết hơn mà nhìn rõ hơn.
 
-Stoa tối và Lụa tối từng nuốt chữ phụ. Mình phải ngồi từng theme, từng sáng tối, bấm hết menu. Không có shortcut. Màu trên giấy khác màu trên máy.
+Stoa tối và Lụa tối từng nuốt chữ phụ. Mình phải ngồi từng theme, từng sáng tối, bấm hết menu. Không có shortcut nào cho việc đó, vì màu trên giấy với màu trên máy là hai chuyện khác nhau.
 
-## Việc mình không làm
-
-Không tách chín repo. Không viết hiệu ứng cho từng thế giới. Không để hex nằm trong component. Hex nằm ở bảng. Component chỉ gọi tên.
-
-Nếu bạn muốn nhiều da trên một site: đừng bắt đầu bằng ảnh. Bắt đầu bằng việc hỏi nút chính còn đọc được không, trên mọi da, cả khi trời tối.
+Suốt quá trình mình giữ một luật nhỏ: không tách chín repo, không để mã hex nằm trong component. Hex nằm ở bảng, component chỉ gọi tên. Về sau mỗi thế giới có thêm một module hiệu ứng nhỏ riêng — bụi nắng ở Stoa, mực loang ở Mực, lụa bay ở Lụa — nhưng luật màu không đổi: module đọc màu qua biến CSS, không có hex, và ai tắt animation trong hệ điều hành thì không thấy gì cả. Còn câu mình hỏi trước mỗi lần thêm một da mới không phải là ảnh nền sẽ ra sao, mà là nút chính còn đọc được không, trên mọi da, kể cả khi trời tối.
 
 <!-- lang:en -->
 
-Same layout: big name, portrait, work done. Skin changes with one attribute on `html`. At first three worlds. Then nine. HTML stays. Only the token table and a wash image change.
+Same layout: big name, portrait, work done. Skin changes with one attribute on `html`. At first three worlds. Then nine. The HTML stays put, only the token table and a wash image change with it.
 
 I have written enough Angular to know when a theme is not a product. Nine HTML copies are nine places to edit when Contact grows. One layout plus tokens means one place. That is the reason — not a hobby of collecting colors.
 
@@ -74,7 +70,7 @@ I have written enough Angular to know when a theme is not a product. Nine HTML c
 
 The browser remembers the chosen world and light or dark. Refresh keeps it. A small head script sets the class before paint so the wrong skin does not flash — worse than an ugly theme.
 
-The header has a list. One click switches. No long "Theme" label. The world name is enough.
+The header has a list. One click switches. No long "Theme" label, the world name is enough.
 
 Each world has paper, ink, gold or patina, one accent, a wash image, and its own chrome colors. In-page buttons and band buttons must not share one color — I learned that the hard way below.
 
@@ -82,7 +78,7 @@ Each world has paper, ink, gold or patina, one accent, a wash image, and its own
 
 **Stoa** is cool marble, gold leaf, carved type. Primary buttons are stone ink. Hall, not fake museum.
 
-**Mirai** is cream paper, amber sun disc, one vermillion mark. Heat taken from a conference site I like. No skyline. No neon. Only heat and cream.
+**Mirai** is cream paper, amber sun disc, one vermillion mark. Heat taken from a conference site I like. No skyline or neon, just the heat and the cream.
 
 **Drum** is patina, star center, concentric rings. Wash is a drum in a hall. Another post covers the circular grid. Here: Drum is not a drum SVG stuck in a corner.
 
@@ -101,16 +97,12 @@ Each must survive long Contact copy, small header buttons, and the big mid-page 
 
 ## Where it breaks — I broke it
 
-Button tokens matched the band. Moon once used the same silver family for sun and ink. "Start something together" vanished on the ink band. People thought the page had no button. Same color as the ground.
+Button tokens matched the band. Moon once used the same silver family for sun and ink. "Start something together" vanished on the ink band. People thought the page had no button, when really it was there, just the same color as the ground.
 
-Now the band has one token, the page another. Splitting sounds fussy. Without it every night is a guessing game.
+Now the band has one token, the page another. Splitting them sounds fussy, but without it every dark mode becomes a guessing game.
 
-Header rules were a repeating ornament. Looked cheap, like wrapping paper. Two hairlines and a center mark now. The mark changes with theme. Less. Clearer.
+Header rules were a repeating ornament. Looked cheap, like wrapping paper. Two hairlines and a center mark now. The mark changes with theme. Less detail, and it reads clearer.
 
-Dark Stoa and dark Silk once swallowed secondary type. I sat through every world, light and dark, every menu. No shortcut. Paper color is not screen color.
+Dark Stoa and dark Silk once swallowed secondary type. I sat through every world, light and dark, every menu. There is no shortcut for that, because paper color and screen color are two different things.
 
-## What I did not do
-
-No nine repos. No per-world motion system. No hex values inside components. Hex lives in the table. Components only call names.
-
-If you want many skins on one site: do not start with images. Start by asking whether the primary button still reads on every skin, including night.
+Through all of it I kept one small rule: no nine repos, no hex values inside components. Hex lives in the table, components only call names. Later each world got a small motion module of its own — sun dust in Stoa, bleeding ink in Ink, drifting silk in Silk — but the color rule held: modules read colors through CSS variables, no hex, and anyone with animations turned off in their OS sees nothing at all. And the question I ask before adding any new skin is not what the wash image will look like, but whether the primary button still reads on every skin, including at night.
