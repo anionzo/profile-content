@@ -5,7 +5,7 @@ slug: chuyen-doi-nghe
 date: 2026-08-01
 updated: 2026-08-16
 tags: [career, learning]
-cover: /images/og-cover.jpg
+cover: /images/posts/chuyen-doi-nghe/cover.jpg
 excerpt: "Không phải nhảy việc. Là đổi chỗ đặt sự thật: từ trong component sang một chỗ có schema, từ làm cho có sang hệ thống nhỏ đủ dùng lâu."
 excerptEn: "Not a job hop. A move of where truth lives: out of components into a schema, from making something exist to a small system that lasts."
 status: published

@@ -5,7 +5,7 @@ slug: bay-tram-sinh-vien-thi-cung-luc
 date: 2025-09-20
 updated: 2026-08-16
 tags: [dotnet, angular, sql-server, performance]
-cover: /images/og-cover.jpg
+cover: /images/posts/bay-tram-sinh-vien-thi-cung-luc/cover.jpg
 excerpt: "Ngày thi tuần sinh hoạt công dân, khoảng 700 sinh viên vào cùng lúc. Không phải demo. Ghi lại những gì mình siết ở API, SQL, và cái nút nộp bài."
 excerptEn: "Civic-education exam day: about 700 students at once. Not a demo. Notes on what I tightened in the API, SQL, and the submit button."
 status: published

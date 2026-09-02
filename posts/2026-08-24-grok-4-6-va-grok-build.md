@@ -5,7 +5,7 @@ slug: grok-4-6-va-grok-build
 date: 2026-08-24
 updated: 2026-08-24
 tags: [ai, grok]
-cover: /images/og-cover.jpg
+cover: /images/posts/grok-4-6-va-grok-build/cover.jpg
 excerpt: "xAI giờ là SpaceXAI, ra Grok 4.5 rồi 4.6 trong hơn một tháng, kèm một coding agent chạy trong terminal. Ghi chú đọc và thử với vài việc backend quen tay."
 excerptEn: "xAI is now SpaceXAI, shipped Grok 4.5 then 4.6 inside five weeks, plus a terminal coding agent. Reading-and-trying notes on a few familiar backend jobs."
 status: published

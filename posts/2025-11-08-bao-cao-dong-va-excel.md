@@ -5,7 +5,7 @@ slug: bao-cao-dong-va-excel
 date: 2025-11-08
 updated: 2026-08-16
 tags: [sql-server, dotnet, excel, learning]
-cover: /images/og-cover.jpg
+cover: /images/posts/bao-cao-dong-va-excel/cover.jpg
 excerpt: "Cột bật tắt được, lọc theo khoa, xuất Excel. Nghe như UI. Phần đau nằm ở SQL, và ở chỗ xem lưới với xuất file không được đi chung một đường."
 excerptEn: "Toggle columns, filter by faculty, export Excel. Sounds like UI work. The pain is SQL — and not letting grid view and file export share one bad path."
 status: published

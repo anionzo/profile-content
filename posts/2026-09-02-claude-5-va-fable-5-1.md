@@ -5,7 +5,7 @@ slug: claude-5-va-fable-5-1
 date: 2026-09-02
 updated: 2026-09-02
 tags: [ai, llm, claude]
-cover: /images/og-cover.jpg
+cover: /images/posts/claude-5-va-fable-5-1/cover.jpg
 excerpt: "Ghi chú đọc và thử sau ba tháng Anthropic ra cả dòng Claude 5: Fable, Sonnet, Opus, rồi Fable 5.1 hôm qua. Cái nào đáng bấm trong Claude Code, cái nào chỉ là số trên slide."
 excerptEn: "Reading-and-trying notes after three months of Claude 5 releases: Fable, Sonnet, Opus, then Fable 5.1 yesterday. What matters inside Claude Code, what is just a slide number."
 status: published

@@ -5,7 +5,7 @@ slug: handle-anionzo
 date: 2026-06-12
 updated: 2026-08-16
 tags: [career, identity]
-cover: /images/og-cover.jpg
+cover: /images/posts/handle-anionzo/cover.jpg
 excerpt: "GitHub, LinkedIn, Facebook, Instagram đều là anionzo, vài chỗ phải thêm đuôi. Ít việc phải nhớ, ít việc phải giải thích."
 excerptEn: "GitHub, LinkedIn, Facebook, Instagram are all anionzo, with a suffix in a couple of places. Less to remember, less to explain."
 status: published

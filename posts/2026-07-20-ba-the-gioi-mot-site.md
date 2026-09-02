@@ -5,7 +5,7 @@ slug: ba-the-gioi-mot-site
 date: 2026-07-20
 updated: 2026-09-02
 tags: [astro, design, theme]
-cover: /images/og-cover.jpg
+cover: /images/posts/ba-the-gioi-mot-site/cover.jpg
 excerpt: "Stoa, Mirai, Đồng, rồi Mực, Sơn, Gốm, Phố, Lụa, Nguyệt — cùng một HTML. Đổi da bằng một thuộc tính và một bảng màu."
 excerptEn: "Stoa, Mirai, Drum, then Ink, Lacquer, Clay, Street, Silk, Moon — one HTML. Skin changes with one attribute and a color table."
 status: published
