@@ -18,6 +18,7 @@ Mỗi bài published một `cover.jpg` 16:9 (nguồn Grok Imagine 1280×720, ups
 | model-mo-cho-phan-mem-truong | Grok Imagine (`image_gen`, 16:9) | Đốm sáng nhỏ như chòm sao họp trên đồng hoang lúc chạng vạng | 2026-09-02 |
 | claude-5-va-fable-5-1 | Grok Imagine (`image_gen`, 16:9) | Lụa kem sọc, ánh bình minh hổ phách, một đường chỉ son | 2026-09-02 |
 | gpt-6-astra | Grok Imagine (`image_gen`, 16:9) | Sao mai hổ phách, quầng astral, vệt hạt cam trên nền than | 2026-09-05 |
+| tri-tue-nhan-tao-tong-quat | Grok Imagine (`image_gen`, 16:9) | Đồng bằng kem lúc rạng đông, quầng hổ phách khuếch tán, lối mòn mảnh mờ dần | 2026-09-06 |
 
 Bỏ qua `2026-08-20-bai-nhap.md` (draft).
 
