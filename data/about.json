@@ -1,17 +1,19 @@
 {
-  "shortBio": "Mình làm phần mềm cho trường: cổng sinh viên, đào tạo, khoa, lịch học, điểm rèn luyện.",
-  "shortBioEn": "I write software for the university: student portal, training, faculty work, timetable, conduct scores.",
-  "longBioMarkdown": "Mình là **Mai Trung Tiến**. Làm nghề khoảng 3.5 năm. Ban ngày ngồi ở IDX HUIT, viết phần mềm cho trường mình từng học.\n\nKhông phải làm một app rồi để đó. Cổng thông tin sinh viên, quản lý đào tạo, điều hành khoa, tuần sinh hoạt công dân, điểm rèn luyện, thời khóa biểu — những thứ cán bộ và sinh viên mở ra mỗi ngày. Có hôm ồn vì gần ngày thi. Có hôm soi một báo cáo chạy chậm. Việc xong là khi người ta dùng được, không phải khi demo đẹp.\n\nTrước đó mình học tại HUIT, giờ vừa làm vừa học tiếp. Handle khắp nơi là **anionzo**.\n\nChuyện kỹ thuật hay từng việc cụ thể thì sang trang dự án, hoặc viết cho mình.",
-  "longBioMarkdownEn": "I'm **Mai Trung Tiến**. About 3.5 years in the work. Weekdays I'm at IDX HUIT, writing software for the university I studied at.\n\nIt isn't one app left on a shelf. The student portal, training, faculty ops, civic-education week, conduct scores, the timetable — the things staff and students open every day. Some days it's loud because exams are close. Some days I'm staring at a report that won't hurry. Done means people can use it, not that the demo looked clean.\n\nI studied at HUIT. I still study there, and I work there. The handle everywhere is **anionzo**.\n\nIf you want the technical bits or a specific piece of work, the projects page has them — or just write to me.",
+  "shortBio": "Thích nghe nhạc, đọc truyện, ngủ. Ban ngày chăm mấy hệ thống ở trường HUIT, rảnh thì ngồi vọc web.",
+  "shortBioEn": "Lover of music, stories, and good sleep. Caring for HUIT university systems by day and tinkering with web craft by night.",
+  "longBioMarkdown": "Mình là **Mai Trung Tiến** (trên mạng mọi người hay gặp nickname **anionzo**). Học việc và đi làm chừng 3.5 năm nay. Hàng ngày mình ngồi ở IDX HUIT, liên tục xây dựng phần mềm mới và chăm sóc các hệ thống cho chính ngôi trường mình từng học đại học.\n\nCông việc của mình không phải làm xong một cái app rồi để đó phủ bụi. Đó là cổng thông tin sinh viên, quản lý đào tạo, phân hệ điều hành khoa, bài thi tuần sinh hoạt công dân, điểm rèn luyện... Mấy thứ mà thầy cô và các bạn sinh viên mở ra dùng mỗi ngày. Có ngày thì đông nghẹt vì sắp đến giờ nộp bài thi. Có ngày ngồi hàng giờ chỉ để tìm xem tại sao một câu query báo cáo chạy chậm hơn bình thường vài giây. Với mình, phần mềm xong là khi người dùng gõ vào thấy mượt, bấm nút thấy yên tâm, chứ không phải lúc trình diễn cho đẹp mắt.\n\nNgoài giờ code thì mình khá chill: thích nằm nghe nhạc, đọc truyện, ngủ một giấc thật sâu, hoặc rảnh rỗi thì ngồi vọc vạch mấy mô hình AI mới và làm web dạo.\n\nNếu bạn muốn xem qua việc mình từng làm thì ghé trang dự án, hoặc có chuyện gì cứ nhắn cho mình nhé.",
+  "longBioMarkdownEn": "I'm **Mai Trung Tiến** (known online as **anionzo**). Around 3.5 years in software work. Weekdays I'm at IDX HUIT, continuously building new tools and caring for the core systems of the very university I graduated from.\n\nIt isn't about shipping an app and leaving it on a shelf. It's the student portal, training operations, faculty management, civic exam weeks, conduct scores — things teachers and students open every single day. Some days get hectic right before exam submission deadlines. Other days are spent tracking down why a report query takes a few seconds longer than it should. To me, software is truly done when people can type smoothly and click submit with peace of mind, not just when the demo looks shiny.\n\nOutside of coding, I'm pretty low-key: I love listening to music, reading stories, catching up on good sleep, or tinkering with new AI models and creative web projects.\n\nFeel free to explore the projects page to see what I've worked on, or drop me a line anytime.",
   "yearsOfExperience": 3.5,
   "funFacts": [
-    "Từng là sinh viên HUIT, giờ viết phần mềm cho chính trường đó",
-    "Thích sửa chỗ chậm trước khi thêm nút mới",
-    "Handle giữ lâu nhất: anionzo"
+    "Sở thích lớn nhất: nghe nhạc, đọc truyện và ngủ nướng",
+    "Từng là sinh viên HUIT, giờ ngồi làm và bảo trì phần mềm cho trường",
+    "Thích tìm chỗ nghẽn database trước khi nghĩ tới thêm tính năng mới",
+    "Gắn bó với một cái nickname duy nhất từ hồi mới học code: anionzo"
   ],
   "funFactsEn": [
-    "I was a HUIT student. Now I write the software the school runs on.",
-    "I fix the slow part before I add another button.",
-    "The handle I've kept longest: anionzo"
+    "Favorite pastimes: listening to music, reading stories, and sleeping in",
+    "Was a HUIT student, now building and maintaining the school's own systems",
+    "Prefers fixing database bottlenecks before adding new features",
+    "Stuck with one single nickname since day one of coding: anionzo"
   ]
 }

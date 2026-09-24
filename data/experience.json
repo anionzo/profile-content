@@ -7,19 +7,19 @@
     "endDate": null,
     "location": "TP. Hồ Chí Minh",
     "locationEn": "Ho Chi Minh City",
-    "description": "Tham gia phát triển hệ thống quản lý đào tạo và sinh viên phục vụ hơn 10.000 người dùng tại HUIT. Trước đó đã cộng tác với viện từ lúc còn đi học.",
-    "descriptionEn": "Building training and student systems used by more than 10,000 people at HUIT. Before that I worked with the institute part-time while still a student.",
+    "description": "Cùng anh em ở IDX HUIT liên tục xây dựng phần mềm mới và chăm sóc các hệ thống cốt lõi của trường: cổng thông tin sinh viên, quản lý đào tạo, lịch học thi và phân hệ điều hành khoa. Mình gắn bó với viện từ lúc còn đi học đại học đến tận bây giờ.",
+    "descriptionEn": "Working with the IDX HUIT team to continuously build new software and care for the university's core systems: student portal, training operations, course scheduling, and faculty management. I've been with the institute since my undergrad days and continue to this day.",
     "highlights": [
-      "Xây dựng và bảo trì RESTful API bằng ASP.NET Core .NET 8 cho các module sinh viên, bài thi, báo cáo và quản trị dữ liệu",
-      "Tối ưu truy vấn SQL Server, pagination và filtering nhằm cải thiện tốc độ tải dữ liệu ở các màn hình báo cáo",
-      "Phát triển các module báo cáo động, cấu hình cột, bộ lọc dữ liệu và xuất Excel phục vụ nghiệp vụ quản lý",
-      "Xây dựng giao diện với Angular và Next.js, tích hợp API, xử lý trạng thái form và tối ưu trải nghiệm người dùng"
+      "Xây dựng và bảo trì các hệ thống mới lẫn cũ bằng ASP.NET Core .NET 8, phục vụ các luồng sinh viên, thi cử, phân quyền và dữ liệu trường",
+      "Tối ưu truy vấn SQL Server, cấu trúc index và phân trang để các màn hình tra cứu, báo cáo đông người dùng không bị chậm",
+      "Phát triển các module báo cáo động, cho phép thầy cô chủ động cấu hình cột, lọc dữ liệu theo khoa và xuất file Excel tiện lợi",
+      "Làm giao diện với Angular và Next.js, chăm chút form nhập liệu và cảm giác gõ phím sao cho người dùng mỗi ngày đỡ mỏi"
     ],
     "highlightsEn": [
-      "Build and maintain ASP.NET Core .NET 8 REST APIs for student, exam, reporting, and admin modules",
-      "Tune SQL Server queries, pagination, and filtering so report screens load faster",
-      "Ship dynamic report modules with column config, filters, and Excel export for staff workflows",
-      "Build Angular and Next.js UI, wire APIs, handle form state, and keep the UX usable day to day"
+      "Build and maintain new and existing systems using ASP.NET Core .NET 8 for student workflows, exams, permissions, and campus data",
+      "Tune SQL Server queries, indexes, and pagination so high-traffic search and report screens stay fast and responsive",
+      "Develop dynamic reporting modules that let faculty select custom columns, filter by department, and export clean Excel files",
+      "Build Angular and Next.js interfaces, taking care of form states and typing comfort for daily university users"
     ],
     "tech": [".NET 8", "ASP.NET Core", "Angular", "Next.js", "SQL Server"]
   },
@@ -28,20 +28,22 @@
     "company": "Freelance",
     "role": "Freelance Developer",
     "startDate": "2023-03",
-    "endDate": "2025-02",
+    "endDate": null,
     "location": "TP. Hồ Chí Minh",
     "locationEn": "Ho Chi Minh City",
-    "description": "Nhận việc lẻ trong lúc đi học: web nhỏ cho người quen, sửa và bảo trì hệ thống có sẵn, viết tool nội bộ. Không dự án nào lớn, nhưng đủ loại để quen với việc bàn giao cho người dùng thật.",
-    "descriptionEn": "Took on small jobs while still studying: simple websites for people I knew, fixing and maintaining existing systems, writing internal tools. Nothing big, but enough variety to get used to handing work over to real users.",
+    "description": "Làm việc tự do từ thời sinh viên đến giờ: nhận dựng web cho khách, bảo trì các hệ thống có sẵn, viết tool xử lý số liệu hoặc tự build mấy ý tưởng nhỏ. Đủ thứ việc lặt vặt giúp mình quen với việc code cái gì là người ta dùng được cái đó.",
+    "descriptionEn": "Freelancing from my student days to the present: building client websites, maintaining existing systems, writing data automation scripts, and tinkering with personal ideas. Hands-on variety that taught me to build software people can actually use.",
     "highlights": [
-      "Dựng web giới thiệu và landing page nhỏ, giao kèm hướng dẫn tự sửa nội dung",
-      "Sửa lỗi và bảo trì code người khác để lại — học cách đọc trước khi sửa",
-      "Viết tool xử lý dữ liệu/Excel cho nhu cầu văn phòng"
+      "Thiết kế và dựng web, landing page hoàn chỉnh, bàn giao kèm hướng dẫn để khách tự cập nhật nội dung dễ dàng",
+      "Tiếp quản, đọc hiểu và sửa lỗi các hệ thống cũ người khác để lại — rèn tính cẩn thận trước khi chạm vào code đang chạy",
+      "Viết các script, tool tự động hóa xử lý dữ liệu và Excel giúp tiết kiệm thời gian cho công việc thực tế",
+      "Tự tìm tòi, ứng dụng công nghệ mới và các mô hình AI để thử nghiệm giải quyết vấn đề đời sống"
     ],
     "highlightsEn": [
-      "Built small brochure sites and landing pages, delivered with a guide so owners could edit content themselves",
-      "Fixed bugs and maintained code left behind by others — learned to read before changing",
-      "Wrote small data and Excel processing tools for office needs"
+      "Built full websites and landing pages, delivered with straightforward guides so owners could edit content easily",
+      "Maintained legacy codebases and fixed bugs — learned to read carefully before changing running software",
+      "Wrote automation scripts and Excel tools to save time on routine data tasks",
+      "Explored new web technologies and AI models to experiment with solving everyday problems"
     ],
     "tech": [".NET", "SQL Server", "HTML/CSS", "JavaScript"]
   }
