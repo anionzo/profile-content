@@ -62,7 +62,7 @@
     "liveUrl": null,
     "repoUrl": null,
     "repoPublic": false,
-    "featured": false,
+    "featured": true,
     "role": "Full Stack Developer",
     "org": "IDX HUIT",
     "startDate": "2025-03",
