@@ -5,7 +5,7 @@ slug: mo-hinh-jev-va-ai-ra-quyet-dinh
 date: 2026-09-25
 updated: 2026-09-25
 tags: [ai, llm, backend, architecture, learning]
-cover: /images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/cover.svg
+cover: /images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/cover.jpg
 excerpt: "Diogo Almeida rời OpenAI lập TypeSafe AI rồi tung ra Jev: mô hình không chat, không viết văn, chỉ nhận ngữ cảnh và trả về quyết định có kiểu kèm xác suất. Khi đơn vị phán đoán rẻ đi 400 lần và nhanh dưới 100ms, nghịch lý Jevons sẽ thay đổi code backend như thế nào?"
 excerptEn: "Diogo Almeida left OpenAI to build TypeSafe AI and launched Jev: a model that doesn't chat or write prose, but takes state and returns typed decisions with calibrated probabilities. When judgment becomes 400x cheaper and drops under 100ms, how does the Jevons paradox reshape backend code?"
 status: published
@@ -52,6 +52,8 @@ Nó không sinh chuỗi ký tự rồi parse lại. Bản thân output là giá 
 
 Điểm kỹ thuật thú vị trong bài blog của TypeSafe là họ sử dụng bộ lấy mẫu song song (Parallel Sampler) kết hợp cùng phương pháp huấn luyện **Reinforcement Learning for Calibrated Decisions (RLCD)** trên tập dữ liệu tổng hợp. RLCD giúp các con số xác suất của Jev phản ánh đúng độ tin cậy thực tế: khi mô hình nói nó tin tưởng 95% vào quyết định này, thì trong 100 lần phán đoán, xác suất đúng thực sự tiệm cận 95%.
 
+
+![So sánh kiến trúc System 1 của Jev và System 2 của LLM truyền thống](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/system-1-vs-system-2.jpg)
 Nhờ vậy, trong code backend bạn có thể viết một câu lệnh kiểm tra rất gọn gàng:
 
 ```typescript
@@ -83,6 +85,8 @@ Khi một lần gọi AI có giá một phần triệu xu và phản hồi nhanh
 
 AI từ một "tính năng gọi ngoài đắt đỏ và nặng nề" biến thành một khối logic cơ bản được gắn chặt vào khung xương của phần mềm.
 
+
+![Nghịch lý Jevons: Chi phí phán đoán giảm 400 lần thúc đẩy AI thâm nhập sâu vào hạ tầng phần mềm](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/diagram-jevons-paradox.jpg)
 ## Một vài suy nghĩ cá nhân
 
 Mình thích cách tiếp cận của Diogo Almeida. Nó xuất phát từ sự bực bội rất thật của những kỹ sư phải xây dựng hệ thống chạy 24/7 bằng công nghệ AI hiện đại.
@@ -134,6 +138,8 @@ It does not generate text strings to be parsed back into types. The output is a 
 
 A notable technical highlight in TypeSafe's documentation is their use of a parallel sampler trained via **Reinforcement Learning for Calibrated Decisions (RLCD)** on synthetic datasets. RLCD ensures that Jev's confidence percentages reflect true statistical probabilities: when the model reports 95% confidence, it genuinely achieves approximately 95% empirical accuracy over repeated trials.
 
+
+![System 1 (Jev) architecture versus System 2 (Traditional LLM)](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/system-1-vs-system-2.jpg)
 In your backend code, this translates into clean, idiomatic control flow:
 
 ```typescript
@@ -165,6 +171,8 @@ When an AI decision costs a micro-fraction of a cent and resolves as fast as an 
 
 AI shifts from an expensive, heavy external API call into an ambient logical primitive embedded directly into software architecture.
 
+
+![The Jevons Paradox in Software Engineering: 400x cost drop driving ambient AI adoption](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/diagram-jevons-paradox.jpg)
 ## Pragmatic takeaways
 
 I appreciate Diogo Almeida's approach. It stems from the very real frustrations of software engineers tasked with building reliable, 24/7 systems with modern AI.
