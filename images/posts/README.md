@@ -22,4 +22,12 @@ Mỗi bài published một `cover.jpg` 16:9 (nguồn Grok Imagine 1280×720, ups
 
 Bỏ qua `2026-08-20-bai-nhap.md` (draft).
 
+Ngoại lệ — cover chụp/screenshot từ web thay vì AI sinh:
+
+| Bài (slug) | Nguồn cover | Ngày |
+|---|---|---|
+| dang-ky-muse-khong-can-fake-vpn | Mashable / Samuel Boivin (Getty) — logo Meta Muse trên màn hình điện thoại, crop 16:9 | 2026-09-26 |
+
+Ảnh trong bài của bài này lấy từ Meta (qua Axios), Fortune, AlphaSignal, AI Agents Library và WIRED; đã resize 1000px, JPEG q85. Nguồn ghi ở cuối bài viết.
+
 Hậu tố art-direction chung: photorealistic, soft diffused light, subtle film grain, palette kem `#f4ead4` / hổ phách `#e8a317` / son `#b42318`.
