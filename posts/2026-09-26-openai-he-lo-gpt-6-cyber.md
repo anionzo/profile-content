@@ -103,7 +103,7 @@ While general-purpose models like GPT-6 Sol or Astra tackle end-to-end software 
 - **Exploit Vulnerability Chaining:** Automatically correlating seemingly benign configuration discrepancies (e.g., combining an internal SSRF proxy bug with an authentication bypass) into an actionable attack path.
 - **Autonomous Patch Synthesis & Validation:** Functioning as an automated Blue Team agent to generate surgical code patches and integration tests that verify remediation before external threat actors weaponize the flaw.
 
-![Autonomous DevSecOps Loop with GPT-6 Cyber](/images/posts/openai-he-lo-gpt-6-cyber/diagram-cyber-sec-loop.jpg)
+![Autonomous DevSecOps Loop with GPT-6 Cyber](/images/posts/openai-he-lo-gpt-6-cyber/diagram-cyber-sec-loop-en.svg)
 
 ## 2. A Concrete Fear: Containing Rogue Agents and Sandbox Escapes
 

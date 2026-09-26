@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <radialGradient id="bg-glow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#1e1814" />
+      <stop offset="100%" stop-color="#0c0b09" />
+    </radialGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#221c17" />
+      <stop offset="100%" stop-color="#13110e" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg-glow)" />
+
+  <g stroke="#ffffff" stroke-width="1" opacity="0.03">
+    <path d="M0 150 H1600 M0 300 H1600 M0 450 H1600 M0 600 H1600 M0 750 H1600" />
+    <path d="M200 0 V900 M400 0 V900 M600 0 V900 M800 0 V900 M1000 0 V900 M1200 0 V900 M1400 0 V900" />
+  </g>
+
+  <!-- Header -->
+  <text x="80" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#fae7b2" letter-spacing="1">Autonomous DevSecOps Loop with GPT-6 Cyber</text>
+  <text x="80" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#8e826b">Automated Red Team Exploitation · Blue Team Patch Synthesis · Enclave Sandbox Containment</text>
+
+  <!-- Central Flow Layout: 6 Interconnected Stages -->
+  
+  <!-- Step 1: CI/CD Trigger -->
+  <g transform="translate(80, 160)" filter="url(#shadow)">
+    <rect width="440" height="200" rx="12" fill="url(#card-grad)" stroke="#3d3527" stroke-width="1.5" />
+    <rect x="20" y="20" width="80" height="24" rx="4" fill="#e8a317" fill-opacity="0.15" />
+    <text x="60" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#e8a317" text-anchor="middle">STAGE 1</text>
+    
+    <text x="20" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#fff">Code Change &amp; CI/CD Ingest</text>
+    <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8e826b">PR commit, container diffs, and IaC manifests</text>
+
+    <rect x="20" y="120" width="400" height="60" rx="6" fill="#110f0c" stroke="#2d271d" />
+    <text x="35" y="145" font-family="ui-monospace, monospace" font-size="12" fill="#22d3ee">git push origin feat/billing-upgrade</text>
+    <text x="35" y="165" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">Spawns isolated ephemeral test harness</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M530 260 H570" stroke="#e8a317" stroke-width="2.5" />
+  <polygon points="570,255 580,260 570,265" fill="#e8a317" />
+
+  <!-- Step 2: Ephemeral Sandbox Enclave -->
+  <g transform="translate(590, 160)" filter="url(#shadow)">
+    <rect width="440" height="200" rx="12" fill="url(#card-grad)" stroke="#d4af37" stroke-width="2" />
+    <rect x="20" y="20" width="80" height="24" rx="4" fill="#e8a317" fill-opacity="0.15" />
+    <text x="60" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#e8a317" text-anchor="middle">STAGE 2</text>
+    
+    <text x="20" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#ffd56b">Ephemeral Enclave Sandbox</text>
+    <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8e826b">Zero outbound network access · MicroVM isolation</text>
+
+    <rect x="20" y="120" width="400" height="60" rx="6" fill="#110f0c" stroke="#2d271d" />
+    <text x="35" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#4ade80">● Hypervisor boundary with hardware virtualization</text>
+    <text x="35" y="165" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#4ade80">● Full memory telemetry &amp; syscall auditing</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M1040 260 H1080" stroke="#e8a317" stroke-width="2.5" />
+  <polygon points="1080,255 1090,260 1080,265" fill="#e8a317" />
+
+  <!-- Step 3: Red Team Exploitation -->
+  <g transform="translate(1100, 160)" filter="url(#shadow)">
+    <rect width="420" height="200" rx="12" fill="url(#card-grad)" stroke="#f43f5e" stroke-width="2" />
+    <rect x="20" y="20" width="80" height="24" rx="4" fill="#f43f5e" fill-opacity="0.15" />
+    <text x="60" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#f43f5e" text-anchor="middle">STAGE 3</text>
+    
+    <text x="20" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#fb7185">Red Team Autonomous Attack</text>
+    <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8e826b">GPT-6 Cyber fuzzes &amp; crafts PoC exploits</text>
+
+    <rect x="20" y="120" width="380" height="60" rx="6" fill="#110f0c" stroke="#2d271d" />
+    <text x="35" y="145" font-family="ui-monospace, monospace" font-size="11" fill="#f43f5e">ALERT: SQLi in /api/v2/tenant/billing</text>
+    <text x="35" y="165" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">Deterministic PoC verified: data exfiltration</text>
+  </g>
+
+  <!-- Downward Arrow 3 -> 4 -->
+  <path d="M1310 370 V430" stroke="#e8a317" stroke-width="2.5" />
+  <polygon points="1305,430 1310,440 1315,430" fill="#e8a317" />
+
+  <!-- Step 4: Blue Team Automated Remediation -->
+  <g transform="translate(1100, 450)" filter="url(#shadow)">
+    <rect width="420" height="200" rx="12" fill="url(#card-grad)" stroke="#22d3ee" stroke-width="2" />
+    <rect x="20" y="20" width="80" height="24" rx="4" fill="#22d3ee" fill-opacity="0.15" />
+    <text x="60" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#22d3ee" text-anchor="middle">STAGE 4</text>
+    
+    <text x="20" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#67e8f9">Blue Team Patch Synthesis</text>
+    <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8e826b">Generates minimal semantic fix + tests</text>
+
+    <rect x="20" y="120" width="380" height="60" rx="6" fill="#110f0c" stroke="#2d271d" />
+    <text x="35" y="145" font-family="ui-monospace, monospace" font-size="11" fill="#22d3ee">+ parameterizedQuery(tenantId, options)</text>
+    <text x="35" y="165" font-family="ui-monospace, monospace" font-size="11" fill="#4ade80">+ xUnit regression test: TestSqlInjectionVector()</text>
+  </g>
+
+  <!-- Leftward Arrow 4 -> 5 -->
+  <path d="M1090 550 H1050" stroke="#e8a317" stroke-width="2.5" />
+  <polygon points="1050,545 1040,550 1050,555" fill="#e8a317" />
+
+  <!-- Step 5: Verification Gate -->
+  <g transform="translate(590, 450)" filter="url(#shadow)">
+    <rect width="440" height="200" rx="12" fill="url(#card-grad)" stroke="#4ade80" stroke-width="2" />
+    <rect x="20" y="20" width="80" height="24" rx="4" fill="#4ade80" fill-opacity="0.15" />
+    <text x="60" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#4ade80" text-anchor="middle">STAGE 5</text>
+    
+    <text x="20" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#86efac">Sandbox Rerun &amp; Exploit Gate</text>
+    <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8e826b">Red Team re-executes attack against patched build</text>
+
+    <rect x="20" y="120" width="400" height="60" rx="6" fill="#110f0c" stroke="#2d271d" />
+    <text x="35" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#4ade80">✔ Exploit payload neutralized (HTTP 400 Bad Request)</text>
+    <text x="35" y="165" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#4ade80">✔ Zero regression across existing test suite</text>
+  </g>
+
+  <!-- Leftward Arrow 5 -> 6 -->
+  <path d="M580 550 H540" stroke="#e8a317" stroke-width="2.5" />
+  <polygon points="540,545 530,550 540,555" fill="#e8a317" />
+
+  <!-- Step 6: Human Sign-off & Production Deploy -->
+  <g transform="translate(80, 450)" filter="url(#shadow)">
+    <rect width="440" height="200" rx="12" fill="url(#card-grad)" stroke="#3d3527" stroke-width="1.5" />
+    <rect x="20" y="20" width="80" height="24" rx="4" fill="#e8a317" fill-opacity="0.15" />
+    <text x="60" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#e8a317" text-anchor="middle">STAGE 6</text>
+    
+    <text x="20" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#fff">Human Review &amp; Deployment</text>
+    <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8e826b">Engineers review summarized diffs before live push</text>
+
+    <rect x="20" y="120" width="400" height="60" rx="6" fill="#110f0c" stroke="#2d271d" />
+    <text x="35" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#ffd56b">Audit trail sealed with cryptographic signature</text>
+    <text x="35" y="165" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#8e826b">Production canary rollout initiated automatically</text>
+  </g>
+
+  <!-- Bottom Banner: Sandbox Escape Containment -->
+  <g transform="translate(80, 680)">
+    <rect width="1440" height="140" rx="12" fill="#15120e" stroke="#e8a317" stroke-width="1.2" />
+    <text x="40" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ffd56b">Critical Safety Constraint: Autonomous Containment &amp; Sandbox Escape Prevention</text>
+    <text x="40" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#c7b99f">Because GPT-6 Cyber synthesizes real zero-day exploits, execution is strictly constrained inside air-gapped hardware enclaves.</text>
+    <text x="40" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8e826b">Any attempt by the autonomous agent to probe host hypervisors or escape virtual boundaries triggers an immediate hard thermal shutdown.</text>
+  </g>
+</svg>

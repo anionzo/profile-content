@@ -54,6 +54,7 @@ Nó không sinh chuỗi ký tự rồi parse lại. Bản thân output là giá 
 
 
 ![So sánh kiến trúc System 1 của Jev và System 2 của LLM truyền thống](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/system-1-vs-system-2.jpg)
+
 Nhờ vậy, trong code backend bạn có thể viết một câu lệnh kiểm tra rất gọn gàng:
 
 ```typescript
@@ -139,7 +140,8 @@ It does not generate text strings to be parsed back into types. The output is a 
 A notable technical highlight in TypeSafe's documentation is their use of a parallel sampler trained via **Reinforcement Learning for Calibrated Decisions (RLCD)** on synthetic datasets. RLCD ensures that Jev's confidence percentages reflect true statistical probabilities: when the model reports 95% confidence, it genuinely achieves approximately 95% empirical accuracy over repeated trials.
 
 
-![System 1 (Jev) architecture versus System 2 (Traditional LLM)](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/system-1-vs-system-2.jpg)
+![System 1 (Jev) architecture versus System 2 (Traditional LLM)](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/system-1-vs-system-2-en.svg)
+
 In your backend code, this translates into clean, idiomatic control flow:
 
 ```typescript
@@ -172,7 +174,8 @@ When an AI decision costs a micro-fraction of a cent and resolves as fast as an 
 AI shifts from an expensive, heavy external API call into an ambient logical primitive embedded directly into software architecture.
 
 
-![The Jevons Paradox in Software Engineering: 400x cost drop driving ambient AI adoption](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/diagram-jevons-paradox.jpg)
+![The Jevons Paradox in Software Engineering: 400x cost drop driving ambient AI adoption](/images/posts/mo-hinh-jev-va-ai-ra-quyet-dinh/diagram-jevons-paradox-en.svg)
+
 ## Pragmatic takeaways
 
 I appreciate Diogo Almeida's approach. It stems from the very real frustrations of software engineers tasked with building reliable, 24/7 systems with modern AI.

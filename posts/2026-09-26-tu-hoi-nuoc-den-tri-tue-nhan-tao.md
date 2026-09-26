@@ -130,7 +130,7 @@ Wind the clock back to the English countryside in 1811, and you would encounter 
 
 Throughout human history, societal evolution has never proceeded in a smooth linear trajectory. Instead, it advances via **paradigm shifts**. Every time our species unlocks a fundamentally new source of physical energy or a faster medium for information distribution, the entire architecture of civilization is reconstructed from first principles.
 
-![Evolutionary Map from Agriculture to Artificial Intelligence across Historical Paradigm Shifts](/images/posts/tu-hoi-nuoc-den-tri-tue-nhan-tao/timeline-revolutions.jpg)
+![Evolutionary Map from Agriculture to Artificial Intelligence across Historical Paradigm Shifts](/images/posts/tu-hoi-nuoc-den-tri-tue-nhan-tao/timeline-revolutions-en.svg)
 
 ## 1. The Master Map: Civilization's Two Core Axes
 
@@ -168,7 +168,7 @@ If the first two revolutions liberated **physical muscle**, the latter half of t
 - In the 1990s, the World Wide Web interconnected billions of distributed nodes. The marginal cost of replicating and transmitting digital information collapsed toward zero.
 - The global economy shifted its gravitational center from physical manufacturing toward software architectures, digital workflows, and cloud-hosted enterprise services.
 
-![Comparing Three Layers of Leverage: Muscle Liberation, Calculation Automation, and Cognitive Synthesis](/images/posts/tu-hoi-nuoc-den-tri-tue-nhan-tao/co-bap-vs-nhan-thuc.jpg)
+![Comparing Three Layers of Leverage: Muscle Liberation, Calculation Automation, and Cognitive Synthesis](/images/posts/tu-hoi-nuoc-den-tri-tue-nhan-tao/co-bap-vs-nhan-thuc-en.svg)
 
 ---
 

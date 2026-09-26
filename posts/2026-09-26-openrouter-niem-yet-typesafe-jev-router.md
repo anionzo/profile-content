@@ -136,7 +136,7 @@ Here is the exact cost breakdown:
 
 In short: **The cognitive deliberation pass required to evaluate prompt complexity and select an execution model is completely subsidized.**
 
-![Routing Workflow of typesafe/jev-router](/images/posts/openrouter-niem-yet-typesafe-jev-router/diagram-router-workflow.jpg)
+![Routing Workflow of typesafe/jev-router](/images/posts/openrouter-niem-yet-typesafe-jev-router/diagram-router-workflow-en.svg)
 
 ---
 

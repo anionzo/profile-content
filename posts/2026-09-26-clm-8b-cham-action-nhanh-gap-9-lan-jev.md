@@ -131,7 +131,7 @@ The training regimen spanned three deliberate phases: pre-training across 60 mil
 
 Because scoring is decoupled into two independent encoders, evaluating an action simplifies to a lightning-fast dot-product vector calculation rather than a full feedforward pass over hundreds of combined tokens.
 
-![System One Architecture Comparison: Jev vs. CLM-8B](/images/posts/clm-8b-cham-action-nhanh-gap-9-lan-jev/diagram-clm-vs-jev.jpg)
+![System One Architecture Comparison: Jev vs. CLM-8B](/images/posts/clm-8b-cham-action-nhanh-gap-9-lan-jev/diagram-clm-vs-jev-en.svg)
 
 ## 2. The Architectural Edge: Two-Sided Caching
 

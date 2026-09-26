@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <radialGradient id="bg-glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#1e1a14" />
+      <stop offset="100%" stop-color="#0c0b09" />
+    </radialGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241f18" />
+      <stop offset="100%" stop-color="#15120e" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg-glow)" />
+
+  <!-- Subtle Grid -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.03">
+    <path d="M0 200 H1600 M0 400 H1600 M0 600 H1600 M0 800 H1600" />
+    <path d="M320 0 V900 M640 0 V900 M960 0 V900 M1280 0 V900" />
+  </g>
+
+  <!-- Title & Context -->
+  <text x="80" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#fae7b2" letter-spacing="1">From Steam to Artificial Intelligence: Civilization's Core Inflection Points</text>
+  <text x="80" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#8e826b">Historical Paradigm Shifts: How Energy &amp; Information Transformations Shifted Human Leverage</text>
+
+  <!-- Main Timeline Axis Line -->
+  <path d="M120 460 H1480" stroke="#d4af37" stroke-width="3" stroke-opacity="0.4" />
+  <polygon points="1480,454 1495,460 1480,466" fill="#d4af37" />
+
+  <!-- Node 1: Agriculture -->
+  <g transform="translate(100, 160)" filter="url(#shadow)">
+    <rect width="250" height="240" rx="10" fill="url(#card-grad)" stroke="#3d3527" stroke-width="1.2" />
+    <rect x="20" y="20" width="70" height="22" rx="4" fill="#a39680" fill-opacity="0.15" />
+    <text x="55" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#a39680" text-anchor="middle">~10,000 BCE</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#fae7b2">Agricultural Era</text>
+    <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#8e826b">Muscle &amp; Solar Energy</text>
+
+    <text x="20" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Primary force: Human &amp; animal muscle</text>
+    <text x="20" y="150" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Land as sole capital asset</text>
+    <text x="20" y="175" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Linear caloric surplus ceiling</text>
+    <text x="20" y="205" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">Domain: Biological Survival</text>
+  </g>
+  <circle cx="225" cy="460" r="10" fill="#1e1a14" stroke="#d4af37" stroke-width="3" />
+  <circle cx="225" cy="460" r="4" fill="#ffd56b" />
+  <path d="M225 400 V450" stroke="#d4af37" stroke-width="2" stroke-dasharray="3 3" />
+
+  <!-- Node 2: Steam Engine -->
+  <g transform="translate(390, 520)" filter="url(#shadow)">
+    <rect width="250" height="240" rx="10" fill="url(#card-grad)" stroke="#e8a317" stroke-width="1.5" />
+    <rect x="20" y="20" width="70" height="22" rx="4" fill="#e8a317" fill-opacity="0.15" />
+    <text x="55" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#e8a317" text-anchor="middle">~1765 CE</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#ffd56b">Steam Revolution</text>
+    <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#8e826b">James Watt &amp; Coal Power</text>
+
+    <text x="20" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Replaces biological muscle with thermal kinetic work</text>
+    <text x="20" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Jevons Paradox: cheaper coal causes demand explosion</text>
+    <text x="20" y="205" font-family="ui-monospace, monospace" font-size="11" fill="#e8a317">Domain: Kinetic Liberation</text>
+  </g>
+  <circle cx="515" cy="460" r="10" fill="#1e1a14" stroke="#e8a317" stroke-width="3" />
+  <circle cx="515" cy="460" r="4" fill="#ffd56b" />
+  <path d="M515 470 V520" stroke="#e8a317" stroke-width="2" stroke-dasharray="3 3" />
+
+  <!-- Node 3: Electricity & Mass Assembly -->
+  <g transform="translate(680, 160)" filter="url(#shadow)">
+    <rect width="250" height="240" rx="10" fill="url(#card-grad)" stroke="#3d3527" stroke-width="1.2" />
+    <rect x="20" y="20" width="70" height="22" rx="4" fill="#a39680" fill-opacity="0.15" />
+    <text x="55" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#a39680" text-anchor="middle">~1870 CE</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#fae7b2">Electric Grid</text>
+    <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#8e826b">Decentralized Power &amp; Assembly</text>
+
+    <text x="20" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Power delivered via wire to factory floors</text>
+    <text x="20" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Mass assembly line (Ford model)</text>
+    <text x="20" y="205" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">Domain: Scaled Manufacturing</text>
+  </g>
+  <circle cx="805" cy="460" r="10" fill="#1e1a14" stroke="#d4af37" stroke-width="3" />
+  <circle cx="805" cy="460" r="4" fill="#ffd56b" />
+  <path d="M805 400 V450" stroke="#d4af37" stroke-width="2" stroke-dasharray="3 3" />
+
+  <!-- Node 4: Computing Revolution -->
+  <g transform="translate(970, 520)" filter="url(#shadow)">
+    <rect width="250" height="240" rx="10" fill="url(#card-grad)" stroke="#22d3ee" stroke-width="1.5" />
+    <rect x="20" y="20" width="70" height="22" rx="4" fill="#22d3ee" fill-opacity="0.15" />
+    <text x="55" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#22d3ee" text-anchor="middle">~1970 CE</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#67e8f9">Digital Computing</text>
+    <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#8e826b">Silicon, Transistors &amp; Software</text>
+
+    <text x="20" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Deterministic calculation automation</text>
+    <text x="20" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Marginal cost of software replication drops to $0</text>
+    <text x="20" y="205" font-family="ui-monospace, monospace" font-size="11" fill="#22d3ee">Domain: Calculation Automation</text>
+  </g>
+  <circle cx="1095" cy="460" r="10" fill="#1e1a14" stroke="#22d3ee" stroke-width="3" />
+  <circle cx="1095" cy="460" r="4" fill="#67e8f9" />
+  <path d="M1095 470 V520" stroke="#22d3ee" stroke-width="2" stroke-dasharray="3 3" />
+
+  <!-- Node 5: Cognitive AI Era -->
+  <g transform="translate(1260, 160)" filter="url(#shadow)">
+    <rect width="260" height="240" rx="10" fill="url(#card-grad)" stroke="#d4af37" stroke-width="2" />
+    <rect x="20" y="20" width="70" height="22" rx="4" fill="#e8a317" fill-opacity="0.2" />
+    <text x="55" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#ffd56b" text-anchor="middle">2026+ CE</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#ffd56b">Cognitive Synthesis</text>
+    <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#8e826b">Neural Networks &amp; Autonomous Agents</text>
+
+    <text x="20" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Automating unstructured cognitive reasoning</text>
+    <text x="20" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#c7b99f">● Ambient decision-making at microsecond scale</text>
+    <text x="20" y="205" font-family="ui-monospace, monospace" font-size="11" fill="#4ade80">Domain: Cognitive Synthesis</text>
+  </g>
+  <circle cx="1390" cy="460" r="12" fill="#1e1a14" stroke="#d4af37" stroke-width="3" />
+  <circle cx="1390" cy="460" r="5" fill="#ffd56b" />
+  <path d="M1390 400 V450" stroke="#d4af37" stroke-width="2" stroke-dasharray="3 3" />
+
+  <!-- Bottom Legend Bar -->
+  <g transform="translate(80, 800)">
+    <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#fae7b2">Core Civilizational Pattern:</text>
+    <text x="190" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8e826b">Muscle Liberation (Watt Steam Engine) → Calculation Automation (Silicon CPU) → Cognitive Synthesis (Frontier AI)</text>
+  </g>
+</svg>

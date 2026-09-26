@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <radialGradient id="bg-glow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1e1914" />
+      <stop offset="100%" stop-color="#0c0b09" />
+    </radialGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241e17" />
+      <stop offset="100%" stop-color="#14120e" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg-glow)" />
+
+  <g stroke="#ffffff" stroke-width="1" opacity="0.03">
+    <path d="M0 150 H1600 M0 300 H1600 M0 450 H1600 M0 600 H1600 M0 750 H1600" />
+    <path d="M200 0 V900 M400 0 V900 M600 0 V900 M800 0 V900 M1000 0 V900 M1200 0 V900 M1400 0 V900" />
+  </g>
+
+  <!-- Header -->
+  <text x="80" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#fae7b2" letter-spacing="1">The Jevons Paradox in Software Engineering</text>
+  <text x="80" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#8e826b">Why a 400x Cost Drop in AI Decisions Accelerates Ambient System Penetration</text>
+
+  <!-- Two Symmetrical Comparison Cards -->
+
+  <!-- Left: 1865 Historical Precedent -->
+  <g transform="translate(80, 160)" filter="url(#shadow)">
+    <rect width="680" height="660" rx="14" fill="url(#card-grad)" stroke="#3d3527" stroke-width="1.5" />
+    
+    <rect x="30" y="30" width="160" height="28" rx="6" fill="#e8a317" fill-opacity="0.15" />
+    <text x="110" y="49" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#e8a317" text-anchor="middle">1865 PRECEDENT</text>
+
+    <text x="30" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700" fill="#fae7b2">The Coal &amp; Steam Paradox</text>
+    <text x="30" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#a39680">William Stanley Jevons · The Coal Question (1865)</text>
+
+    <!-- Flow box -->
+    <rect x="30" y="150" width="620" height="150" rx="8" fill="#110f0c" stroke="#2d271d" />
+    <text x="50" y="180" font-family="ui-monospace, monospace" font-size="12" fill="#ffd56b">EFFICIENCY BREAKTHROUGH:</text>
+    <text x="50" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#fff">James Watt re-engineers Newcomen's engine.</text>
+    <text x="50" y="228" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#a39680">Thermal efficiency jumps 4x · Coal consumption per horsepower plunges 75%.</text>
+    <text x="50" y="265" font-family="ui-monospace, monospace" font-size="12" fill="#f43f5e">Naïve Prediction: Britain's national coal consumption should decrease.</text>
+
+    <rect x="30" y="325" width="620" height="180" rx="8" fill="#171410" stroke="#e8a317" stroke-width="1.2" />
+    <text x="50" y="355" font-family="ui-monospace, monospace" font-size="12" fill="#e8a317">EMPIRICAL OUTCOME (THE PARADOX):</text>
+    <text x="50" y="385" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ffd56b">Aggregate Coal Consumption Exploded Exponentially</text>
+    <text x="50" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#c7b99f">Because kinetic power became cheap, reliable, and accessible, steam spread</text>
+    <text x="50" y="438" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#c7b99f">from coal-mine pumps to textile mills, locomotives, steamships, and metallurgy.</text>
+    <text x="50" y="475" font-family="ui-monospace, monospace" font-size="13" fill="#4ade80">Cheaper resource unit → Unlocked vast new operational surface area.</text>
+
+    <!-- Key Lesson -->
+    <text x="30" y="545" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#fae7b2">Historical Invariant:</text>
+    <text x="30" y="575" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#a39680">When marginal efficiency increases for an indispensable resource,</text>
+    <text x="30" y="598" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#a39680">demand elasticity &gt; 1, driving total systemic consumption higher.</text>
+  </g>
+
+  <!-- Right: 2026 AI Architecture Paradox -->
+  <g transform="translate(840, 160)" filter="url(#shadow)">
+    <rect width="680" height="660" rx="14" fill="url(#card-grad)" stroke="#d4af37" stroke-width="2" />
+    
+    <rect x="30" y="30" width="160" height="28" rx="6" fill="#22d3ee" fill-opacity="0.15" />
+    <text x="110" y="49" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#22d3ee" text-anchor="middle">2026 APPLICATION</text>
+
+    <text x="30" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700" fill="#67e8f9">The Ambient AI Decision Paradox</text>
+    <text x="30" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#a39680">TypeSafe Jev · Sub-100ms Structured Decisions at $0.042 / 1M</text>
+
+    <!-- Flow box -->
+    <rect x="30" y="150" width="620" height="150" rx="8" fill="#110f0c" stroke="#2d271d" />
+    <text x="50" y="180" font-family="ui-monospace, monospace" font-size="12" fill="#ffd56b">EFFICIENCY BREAKTHROUGH:</text>
+    <text x="50" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#fff">Jev eliminates autoregressive text generation for decisions.</text>
+    <text x="50" y="228" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#a39680">Latency drops from 2,000ms → 80ms · Cost plunges 444x to $0.042/1M.</text>
+    <text x="50" y="265" font-family="ui-monospace, monospace" font-size="12" fill="#f43f5e">Naïve Prediction: Companies will spend less on AI API bills.</text>
+
+    <rect x="30" y="325" width="620" height="180" rx="8" fill="#171410" stroke="#d4af37" stroke-width="1.2" />
+    <text x="50" y="355" font-family="ui-monospace, monospace" font-size="12" fill="#ffd56b">PARADOX REALIZED:</text>
+    <text x="50" y="385" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#fae7b2">Total AI Invocations Multiply 1,000x Across Infrastructure</text>
+    <text x="50" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#c7b99f">Instead of calling AI once on a chatbot screen, engineers embed AI into:</text>
+    <text x="50" y="438" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#c7b99f">● HTTP middleware authentication &amp; request triage</text>
+    <text x="50" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#c7b99f">● Queue processors, autonomous agent step verification, API rate limits</text>
+    <text x="50" y="488" font-family="ui-monospace, monospace" font-size="13" fill="#4ade80">AI ceases to be a feature; it becomes ambient structural middleware.</text>
+
+    <!-- Key Lesson -->
+    <text x="30" y="545" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffd56b">Architecture Takeaway:</text>
+    <text x="30" y="575" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#a39680">When judgment calls cost fractions of a micro-cent,</text>
+    <text x="30" y="598" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#a39680">every single if-else condition becomes an opportunity for semantic reasoning.</text>
+  </g>
+</svg>

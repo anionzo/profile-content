@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <radialGradient id="bg-glow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1e1814" />
+      <stop offset="100%" stop-color="#0c0b09" />
+    </radialGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241e17" />
+      <stop offset="100%" stop-color="#14120e" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg-glow)" />
+
+  <g stroke="#ffffff" stroke-width="1" opacity="0.03">
+    <path d="M0 150 H1600 M0 300 H1600 M0 450 H1600 M0 600 H1600 M0 750 H1600" />
+    <path d="M200 0 V900 M400 0 V900 M600 0 V900 M800 0 V900 M1000 0 V900 M1200 0 V900 M1400 0 V900" />
+  </g>
+
+  <!-- Header -->
+  <text x="80" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#fae7b2" letter-spacing="1">System 1 (Jev) vs. System 2 (Traditional LLM) Architecture</text>
+  <text x="80" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#8e826b">Generative Text Generation vs. Non-Generative Calibrated Primitive Decisions</text>
+
+  <!-- Left: System 2 Traditional LLM -->
+  <g transform="translate(80, 160)" filter="url(#shadow)">
+    <rect width="680" height="660" rx="14" fill="url(#card-grad)" stroke="#3d3527" stroke-width="1.5" />
+    
+    <rect x="30" y="30" width="130" height="28" rx="6" fill="#a39680" fill-opacity="0.15" />
+    <text x="95" y="49" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#a39680" text-anchor="middle">SYSTEM 2</text>
+
+    <text x="30" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700" fill="#fae7b2">Traditional Generative LLM</text>
+    <text x="30" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#a39680">Claude 3.5/Opus · GPT-4/o1 · Llama 3 (Autoregressive Decoder)</text>
+
+    <!-- Stat Badges -->
+    <rect x="30" y="150" width="180" height="65" rx="8" fill="#13110d" stroke="#2d271d" />
+    <text x="45" y="176" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">TYPICAL LATENCY</text>
+    <text x="45" y="202" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#f43f5e">1,500 – 6,000 ms</text>
+
+    <rect x="230" y="150" width="180" height="65" rx="8" fill="#13110d" stroke="#2d271d" />
+    <text x="245" y="176" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">COST TIER</text>
+    <text x="245" y="202" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#f43f5e">$2.50 – $15.00/M</text>
+
+    <rect x="430" y="150" width="220" height="65" rx="8" fill="#13110d" stroke="#2d271d" />
+    <text x="445" y="176" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">OUTPUT FORMAT</text>
+    <text x="445" y="202" font-family="ui-monospace, monospace" font-size="16" font-weight="600" fill="#ffd56b">Unstructured String</text>
+
+    <!-- Execution Diagram -->
+    <rect x="30" y="240" width="620" height="230" rx="10" fill="#110f0c" stroke="#2d271d" />
+    <text x="50" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#c7b99f">Autoregressive Decoding Loop:</text>
+
+    <rect x="50" y="290" width="580" height="50" rx="6" fill="#1a1813" stroke="#3d3527" />
+    <text x="70" y="321" font-family="ui-monospace, monospace" font-size="12" fill="#8e826b">Token 1 → Token 2 → Token 3 ... → Token N (Sequential Pass)</text>
+
+    <rect x="50" y="355" width="580" height="95" rx="6" fill="#171511" />
+    <text x="70" y="382" font-family="ui-monospace, monospace" font-size="12" fill="#f43f5e">Raw Output: "```json\n{ \"approved\": true, \"comment\": ... }\n```"</text>
+    <text x="70" y="408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#8e826b">Requires markdown fence stripping, regex recovery, and JSON.parse().</text>
+    <text x="70" y="430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#f43f5e">Risk: Hallucinated keys, malformed trailing commas, token timeouts.</text>
+
+    <!-- Bullet points -->
+    <text x="30" y="505" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#fae7b2">Characteristics in Production:</text>
+    <text x="30" y="535" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#ffd56b">✔ Incredible open-ended creativity, essay drafting, deep math derivations</text>
+    <text x="30" y="565" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#f43f5e">✘ Unpredictable latency jitter makes it unusable in synchronous HTTP hot paths</text>
+    <text x="30" y="595" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#f43f5e">✘ Expensive token billing creates architectural reluctance to call frequently</text>
+  </g>
+
+  <!-- Right: System 1 TypeSafe Jev -->
+  <g transform="translate(840, 160)" filter="url(#shadow)">
+    <rect width="680" height="660" rx="14" fill="url(#card-grad)" stroke="#d4af37" stroke-width="2" />
+    
+    <rect x="30" y="30" width="130" height="28" rx="6" fill="#e8a317" fill-opacity="0.15" />
+    <text x="95" y="49" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#e8a317" text-anchor="middle">SYSTEM 1</text>
+
+    <text x="30" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700" fill="#ffd56b">TypeSafe Jev Engine</text>
+    <text x="30" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#a39680">Non-Generative · RLCD Calibrated · Single-Pass Primitive Evaluator</text>
+
+    <!-- Stat Badges -->
+    <rect x="30" y="150" width="180" height="65" rx="8" fill="#13110d" stroke="#2d271d" />
+    <text x="45" y="176" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">TYPICAL LATENCY</text>
+    <text x="45" y="202" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#4ade80">&lt; 100 ms</text>
+
+    <rect x="230" y="150" width="180" height="65" rx="8" fill="#13110d" stroke="#2d271d" />
+    <text x="245" y="176" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">COST TIER</text>
+    <text x="245" y="202" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#4ade80">$0.042 / 1M In · $0 Out</text>
+
+    <rect x="430" y="150" width="220" height="65" rx="8" fill="#13110d" stroke="#2d271d" />
+    <text x="445" y="176" font-family="ui-monospace, monospace" font-size="11" fill="#8e826b">OUTPUT FORMAT</text>
+    <text x="445" y="202" font-family="ui-monospace, monospace" font-size="16" font-weight="600" fill="#22d3ee">Native Primitive + Prob</text>
+
+    <!-- Execution Diagram -->
+    <rect x="30" y="240" width="620" height="230" rx="10" fill="#110f0c" stroke="#2d271d" />
+    <text x="50" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#c7b99f">Parallel Single-Pass Evaluation:</text>
+
+    <rect x="50" y="290" width="580" height="50" rx="6" fill="#1a1813" stroke="#e8a317" />
+    <text x="70" y="321" font-family="ui-monospace, monospace" font-size="12" fill="#ffd56b">Prompt Context → Direct Output Tensor (Zero Auto-regressive Loop)</text>
+
+    <rect x="50" y="355" width="580" height="95" rx="6" fill="#171511" />
+    <text x="70" y="382" font-family="ui-monospace, monospace" font-size="12" fill="#22d3ee">Raw Output: { allow: true, confidence: 0.985, reasonCode: "VALID" }</text>
+    <text x="70" y="408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#8e826b">Direct binary payload deserialization. Zero intermediate text generation.</text>
+    <text x="70" y="430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#4ade80">Zero Hallucination: Cannot invent nonexistent keys or text tokens.</text>
+
+    <!-- Bullet points -->
+    <text x="30" y="505" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffd56b">Characteristics in Production:</text>
+    <text x="30" y="535" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#4ade80">✔ Deterministic latency &lt;100ms fits seamlessly into HTTP gateways and middleware</text>
+    <text x="30" y="565" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#4ade80">✔ Mathematically calibrated confidence (95% score = 95% real-world accuracy)</text>
+    <text x="30" y="595" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#4ade80">✔ 444x cheaper: embed freely into loops, queue consumers, and verifiers</text>
+  </g>
+</svg>
