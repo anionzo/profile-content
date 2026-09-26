@@ -1,13 +1,13 @@
 ---
-title: "OpenRouter niêm yết typesafe/jev-router: Khi AI System One làm cảnh sát giao thông cho API"
-titleEn: "OpenRouter Lists typesafe/jev-router: When System One AI Acts as the Traffic Controller for APIs"
+title: "OpenRouter niêm yết typesafe/jev-router miễn phí: Dùng thử AI System One điều hướng 1M token từ 25/9"
+titleEn: "OpenRouter Lists typesafe/jev-router for Free: Testing 1M-Context System One Routing from September 25th"
 slug: openrouter-niem-yet-typesafe-jev-router
 date: 2026-09-26
 updated: 2026-09-26
 tags: [ai, llm, openrouter, backend, architecture]
 cover: /images/posts/openrouter-niem-yet-typesafe-jev-router/cover.jpg
-excerpt: "OpenRouter vừa niêm yết endpoint typesafe/jev-router từ ngày 25/9. Endpoint dùng model quyết định Jev của TypeSafe để tự chọn model và mức reasoning cho từng request nhằm cân bằng chất lượng, tốc độ và chi phí, nhưng thực tế triển khai cần lưu ý điều gì?"
-excerptEn: "OpenRouter listed the typesafe/jev-router endpoint on September 25th. The endpoint uses TypeSafe's Jev decision model to dynamically pick the best model and reasoning effort for each request. A systems view on its 1M context, free routing tier, and empirical unknowns."
+excerpt: "Từ ngày 25/9/2026, OpenRouter chính thức mở miễn phí endpoint typesafe/jev-router với giá $0/1M token và context 1.000.000 token. Phân tích chi tiết chính sách giá free, hạn mức rate limit 50 vs 1.000 req/ngày và những lưu ý thực tế khi triển khai."
+excerptEn: "Starting September 25, 2026, OpenRouter officially listed the typesafe/jev-router endpoint for free ($0/1M tokens) with a 1,000,000-token context window. A detailed breakdown of its free-tier quotas (50 vs 1,000 req/day), pricing mechanics, and production caveats."
 status: published
 readingTimeOverride: null
 series: null
@@ -15,148 +15,190 @@ canonicalUrl: null
 ogImage: null
 ---
 
-Nếu bạn từng xây dựng ứng dụng tích hợp nhiều mô hình LLM cùng lúc, chắc chắn bạn đã từng nếm trải bài toán đau đầu về **định tuyến (Model Routing)**:
-- Nếu cắm cố định một model mạnh như Claude Opus 5.5 hay GPT-6 Sol cho mọi tác vụ, hóa đơn API cuối tháng sẽ làm sếp tái mặt, trong khi người dùng phải chờ cả giây chỉ để nhận một câu chào hỏi đơn giản.
-- Ngược lại, nếu ép tất cả qua model giá rẻ như GPT-6 Luna hay Gemini Flash, hệ thống sẽ gãy ngay khi gặp những câu hỏi nghiệp vụ lắt léo cần lập luận đa bước.
-- Nếu tự viết code định tuyến bằng regex, đếm số từ khóa hay viết switch-case thủ công, logic đó sẽ nhanh chóng biến thành một mớ code rối rắm (spaghetti code) cực kỳ khó bảo trì.
+Nếu bạn thường xuyên gọi API qua OpenRouter, có một tin tức về hạ tầng rất đáng chú ý vừa diễn ra: **Từ ngày 25/9/2026, OpenRouter đã chính thức niêm yết endpoint `typesafe/jev-router` và mở dùng hoàn toàn MIỄN PHÍ ($0.00 / 1M token).**
 
-Ngày 25/9/2026, **OpenRouter** — cổng API tổng hợp lớn nhất hiện nay cho giới lập trình viên AI — đã chính thức niêm yết một endpoint mới nhằm giải quyết dứt điểm bài toán này: **`typesafe/jev-router`**.
+Đây là sự kết hợp giữa OpenRouter và startup TypeSafe AI của Diogo Almeida (cựu nhân sự nghiên cứu OpenAI), đưa mô hình phán đoán **Jev** vào làm tầng điều hướng (Dynamic Router) ở cửa ngõ API. 
 
-Thay vì dùng các thuật toán heuristic thông thường, endpoint này cắm thẳng mô hình quyết định **Jev của TypeSafe AI** vào tầng Gateway để làm "cảnh sát giao thông" phân luồng từng request gửi đến.
+Với cửa sổ ngữ cảnh khổng lồ lên tới **1.000.000 token** và mức giá hiển thị 0 đồng, đây là cơ hội tuyệt vời để giới lập trình viên cắm vào hệ thống thử nghiệm mà không tốn chi phí. Nhưng đằng sau chữ "Free" này có cơ chế tính toán, hạn ngạch và những đánh đổi kỹ thuật nào mà bạn cần biết?
 
 ![OpenRouter niêm yết typesafe/jev-router](/images/posts/openrouter-niem-yet-typesafe-jev-router/cover.jpg)
 
-## 1. typesafe/jev-router hoạt động như thế nào?
+## 1. Mổ xẻ chính sách giá: Miễn phí cái gì và tính phí ra sao?
 
-Điểm đầu tiên cần làm rõ: **`typesafe/jev-router` không phải là một mô hình sinh chữ (generative LLM)** như Claude hay GPT. Bản thân nó không viết văn hay giải toán. Nó là một **lớp định tuyến thông minh (Smart Router Proxy)**.
+Nhiều anh em nhìn vào bảng giá của OpenRouter có thể sẽ thắc mắc: *Mô hình Jev gốc vốn có phí, tại sao Jev Router lại ghi $0?*
 
-Khi bạn gửi một request vào OpenRouter với tham số `model: "typesafe/jev-router"`, quy trình diễn ra như sau:
-1. **Tiếp nhận ngữ cảnh:** Router nhận toàn bộ mảng tin nhắn đàm thoại (hỗ trợ cửa sổ ngữ cảnh lên tới **1.000.000 token**).
-2. **Đánh giá bằng System One:** Thay vì dùng một LLM cồng kềnh, OpenRouter chuyển ngữ cảnh đó qua mô hình **Jev** của TypeSafe. Vì Jev là mô hình trực giác (System One) chuyên đưa ra quyết định có kiểu (typed decisions) dưới 100ms, nó sẽ nhanh chóng "ngửi" prompt để ra hai quyết định:
-   - **Chọn mô hình đích (Target Model):** Bài toán này thuộc nhóm dễ (đẩy cho Luna / Haiku), nhóm trung bình (đẩy cho Sol / Sonnet), hay nhóm lập luận sâu (đẩy cho Opus / Astra / o1)?
-   - **Cân chỉnh mức độ suy luận (Reasoning Effort):** Nếu mô hình đích có hỗ trợ chế độ suy nghĩ (như Extended Thinking), Jev sẽ quyết định cấp bao nhiêu ngân sách suy luận (thinking budget) là vừa đủ để không lãng phí thời gian và tiền bạc.
-3. **Thực thi và trả về:** OpenRouter âm thầm chuyển tiếp request tới mô hình đích đã chọn và stream kết quả về cho client theo đúng định dạng chuẩn của OpenAI API.
+Dưới đây là cơ chế phân tách chi phí rất rõ ràng:
+
+### Jev gốc vs. Jev Router trên OpenRouter
+1. **Model phán đoán Jev 1.13 (`typesafe/jev-1.13`):** 
+   - Đây là mô hình System One gốc chuyên trả về typed decision.
+   - Giá niêm yết: **0.042 USD cho 1 triệu token đầu vào**, token đầu ra miễn phí ($0). Bạn tự viết logic gọi Jev để phân loại hoặc kiểm duyệt.
+2. **Jev Router (`typesafe/jev-router` - Niêm yết từ 25/9/2026):**
+   - Giá niêm yết trên OpenRouter: **$0.00 / 1M input tokens** và **$0.00 / 1M output tokens**.
+   - OpenRouter **không thu bất kỳ khoản phụ phí nào** cho bước phân tích prompt và ra quyết định định tuyến của Jev.
+   - Dòng chữ trên trang chủ OpenRouter ghi rõ: *"This model is free to use"*.
+
+Nói cách khác: **Toàn bộ công đoạn "suy nghĩ" để chọn model của Jev Router được tài trợ miễn phí.**
 
 ![Quy trình phân luồng của typesafe/jev-router](/images/posts/openrouter-niem-yet-typesafe-jev-router/diagram-router-workflow.jpg)
 
-## 2. Thông số niêm yết và bài toán chi phí
+---
 
-Trên trang chính thức của OpenRouter, `typesafe/jev-router` được niêm yết với hai thông số rất đáng chú ý:
-- **Cửa sổ ngữ cảnh (Context Window):** 1.000.000 token — mức tương đương với các model biên giới hàng đầu hiện nay.
-- **Giá token định tuyến:** **$0 / $0 token**.
+## 2. Hạn ngạch Free Tier trên OpenRouter: 50 hay 1.000 requests/ngày?
 
-Nghĩa là OpenRouter không tính thêm phụ phí cho bước ra quyết định của Jev Router. Bạn chỉ phải thanh toán đúng số token mà mô hình đích thực tế đã tiêu thụ.
+Vì `typesafe/jev-router` được xếp vào nhóm mô hình miễn phí (`:free`), nó chịu sự điều tiết của **chính sách Rate Limit tầng miễn phí** của OpenRouter. Cụ thể có 2 kịch bản hạn ngạch:
 
-Về mặt lý thuyết, đây là một món hời lớn: bạn có được một bộ não phán đoán cấp cao đứng ở cửa ngõ, tự động tối ưu hóa chi phí và tốc độ mà không tốn thêm một xu phí trung gian nào.
+| Hạng tài khoản | Tốc độ tối đa | Hạn ngạch theo ngày | Ghi chú thực tế |
+|---|---|---|---|
+| **Tài khoản Free thuần túy** (Chưa từng nạp tiền) | **20 requests / phút** | **50 requests / ngày** | Phù hợp vọc vạch, test prompt cá nhân |
+| **Tài khoản đã nạp $10+** (Lifetime Credit Top-up) | **20 requests / phút** | **1.000 requests / ngày** | Đủ chạy thử nghiệm cho các dự án nội bộ |
 
-## 3. Những điểm cần thận trọng: Chưa có dữ liệu thực tế so với Auto Router
+> [!TIP]
+> Nếu bạn muốn tận dụng 1.000 request miễn phí mỗi ngày với `typesafe/jev-router`, bạn chỉ cần nạp tối thiểu 10 USD vào tài khoản OpenRouter một lần duy nhất. Số tiền 10 USD đó vẫn nằm nguyên trong ví của bạn để dành cho các API trả phí khác, nhưng tài khoản sẽ tự động được mở khóa hạn ngạch 1.000 lượt gọi free/ngày trọn đời.
 
-Dù ý tưởng rất quyến rũ, nhưng ở góc độ một người trực tiếp vận hành hệ thống, mình đồng tình với những phân tích kỹ thuật gần đây: **chúng ta chưa nên vội vàng đưa `typesafe/jev-router` vào production thay thế hoàn toàn cho router sẵn có**.
+---
 
-Có ba dấu hỏi lớn mà cộng đồng dev cần có thời gian kiểm chứng:
+## 3. typesafe/jev-router thực chất làm gì ở tầng Gateway?
 
-### Dấu hỏi 1: Chưa có dữ liệu benchmark thực tế độc lập
-OpenRouter từ lâu đã có endpoint **`openrouter/auto`** (tự động chọn model dựa trên độ trễ, giá cả và tính sẵn sàng của nhà cung cấp). 
-Hiện tại, chưa có bất kỳ bộ dữ liệu thực nghiệm (empirical production data) nào công bố tỷ lệ routing chính xác của `jev-router` so với `openrouter/auto`. Chúng ta chưa biết trong 10.000 request hỗn hợp thực tế, Jev Router tiết kiệm được bao nhiêu phần trăm chi phí và cải thiện chất lượng phản hồi ra sao.
+Khi bạn gửi request đến `https://openrouter.ai/api/v1/chat/completions` với body:
 
-### Dấu hỏi 2: Độ trễ cộng thêm (Routing Overhead)
-Dù Jev chạy rất nhanh (thường dưới 100ms), nhưng việc chèn thêm một lượt suy luận của Jev trước khi chạm tới mô hình đích chắc chắn sẽ cộng dồn vào chỉ số **TTFT (Time to First Token)**. 
-Với các ứng dụng chatbot tương tác thời gian thực hoặc giao diện giọng nói cần độ trễ dưới 300ms, việc mất thêm 50 đến 100ms chỉ cho khâu định tuyến có thể khiến trải nghiệm người dùng cảm thấy khựng lại rõ rệt.
+```json
+{
+  "model": "typesafe/jev-router",
+  "messages": [
+    { "role": "user", "content": "Phân tích đoạn log lỗi IIS sau..." }
+  ]
+}
+```
 
-### Dấu hỏi 3: Rủi ro phân loại nhầm ở các bài toán Edge-case
-Một rủi ro kinh điển của mọi hệ thống phân luồng tự động là:
-- **Under-routing (Tiết kiệm quá mức):** Người dùng đặt một câu hỏi trông có vẻ đơn giản (ví dụ: một câu đố mẹo hoặc một đoạn code ngắn nhưng chứa lỗi kiến trúc tiềm ẩn), Jev phán đoán nhầm là bài toán cơ bản và đẩy cho một model giá rẻ. Kết quả là câu trả lời bị sai lệch hoàn toàn.
-- **Over-routing (Lãng phí quá mức):** Ngược lại, một câu hỏi dài dòng nhưng bản chất chỉ là tóm tắt văn bản thông thường lại bị Jev phân luồng vào Claude Opus 5.5, khiến chi phí tăng vọt một cách vô ích.
+Thay vì đưa câu hỏi cho một con LLM truyền thống trả lời ngay, OpenRouter kích hoạt quy trình 3 bước:
+1. **Nạp ngữ cảnh (lên tới 1M token):** Toàn bộ lịch sử hội thoại được nạp vào bộ nhớ đệm.
+2. **Jev ra phán đoán dưới 100ms:** Mô hình Jev phân tích độ phức tạp ngữ nghĩa của prompt để ra quyết định:
+   - *Độ khó thấp (chào hỏi, dịch thuật đơn giản, format JSON):* Đẩy về Tier giá rẻ như GPT-6 Luna, Claude Haiku 3.5, Gemini Flash.
+   - *Độ khó trung bình (viết code nghiệp vụ, kiểm tra policy):* Đẩy về Tier cân bằng như GPT-6 Sol, Claude Sonnet 4.
+   - *Độ khó cao (lập luận toán học, suy luận đa bước, agentic coding):* Đẩy về Tier đầu bảng như Claude Opus 5.5, GPT-6 Astra, o1 Pro.
+   - *Cấu hình Reasoning Budget:* Cân chỉnh số token suy nghĩ (thinking tokens) vừa đủ, tránh lãng phí thời gian chờ đợi.
+3. **Thực thi và phản hồi:** OpenRouter chuyển tiếp request tới model được chọn và stream kết quả về client.
 
-## Góc nhìn của một kỹ sư backend
+---
 
-Việc OpenRouter niêm yết `typesafe/jev-router` đánh dấu một cột mốc quan trọng hơn bản thân tính năng của nó: **sự công nhận của ngành công nghiệp đối với mô hình kiến trúc System One**.
+## 4. Những điều dân kỹ thuật cần tỉnh táo (Caveats)
 
-Trước đây, chúng ta quen với việc "một mô hình gánh tất cả". Một con LLM to đùng phải vừa đọc prompt, vừa tự phân loại, vừa tự giải quyết, vừa tự format JSON. 
+Việc được dùng miễn phí một router thông minh là rất hấp dẫn, nhưng ở góc độ kỹ sư vận hành, có hai điểm cốt lõi bạn phải lưu ý trước khi cắm vào production:
 
-Bây giờ, kiến trúc phần mềm AI đang dần phân hóa rõ ràng theo mô hình sinh học:
-- **Tầng Gateway (System One):** Sử dụng các mô hình câm lặng, siêu nhanh và chuẩn xác như Jev (hoặc CLM-8B) để gác cổng, phân luồng, kiểm duyệt an toàn (guardrail) và bắt lỗi.
-- **Tầng Execution (System Two):** Sử dụng các mô hình ngôn ngữ lớn để lập luận sâu, sinh code và giao tiếp với con người.
+### Lưu ý 1: Chưa có dữ liệu thực nghiệm so với Auto Router sẵn có
+OpenRouter từ trước đến nay đã có endpoint **`openrouter/auto`** (tự động phân luồng dựa trên uptime, latency và giá nhà cung cấp).
+Tính đến thời điểm hiện tại (cuối tháng 9/2026), **chưa có bất kỳ báo cáo dữ liệu thực tế độc lập nào (empirical benchmark)** chứng minh `typesafe/jev-router` thông minh hơn hay tiết kiệm tiền hơn `openrouter/auto`. Chúng ta chưa biết trong một tập 10.000 prompt thực tế, tỷ lệ chọn model của Jev có thực sự tối ưu hay không, hay đôi khi nó lại chọn nhầm mô hình đắt tiền cho một câu hỏi ngớ ngẩn (over-routing).
 
-Với các dự án cá nhân hoặc môi trường thử nghiệm, `typesafe/jev-router` là một endpoint rất đáng để cắm vào thử nghiệm ngay hôm nay. Còn với các hệ thống production quan trọng, mình sẽ theo dõi sát sao bảng thống kê độ trễ và tỷ lệ phân luồng thực tế trong vài tuần tới trước khi quyết định chuyển đổi toàn bộ lưu lượng sang đường ray mới này.
+### Lưu ý 2: Độ trễ cộng dồn vào TTFT (Time to First Token)
+Mặc dù Jev là mô hình System One chạy rất nhanh (khoảng 70–100ms), nhưng việc chèn thêm một bước phán đoán trước khi chạm tới model thực thi vẫn làm tăng chỉ số **TTFT**.
+Với các tác vụ cần phản hồi tức thì (như trợ lý ảo thời gian thực hoặc voice bot), độ trễ cộng thêm này có thể khiến người dùng cảm giác bị "khựng" lại một nhịp so với việc gọi thẳng vào model đích.
+
+---
+
+## Lời khuyên triển khai
+
+- **Với môi trường Development / Staging:** `typesafe/jev-router` là một endpoint "hời" không thể bỏ qua. Bạn được tận dụng 1M token context, miễn phí router, và tận dụng quota 50–1.000 req/ngày để thử nghiệm phân luồng tự động.
+- **Với môi trường Production:** Hãy bắt đầu bằng cách route 5–10% traffic thử nghiệm (canary testing), ghi log lại model mà Jev đã chọn và đối chiếu chi phí hóa đơn thực tế trong 2 tuần trước khi cutover toàn bộ hệ thống.
 
 ## Nguồn tham khảo
 
-- OpenRouter, [TypeSafe: Jev Router (typesafe/jev-router) Model Overview & Documentation](https://openrouter.ai/typesafe/jev-router) (25/09/2026)
-- OpenRouter, [Jev Documentation & Decisions API Community Guide](https://openrouter.ai/docs/guides/community/jev)
+- OpenRouter, [TypeSafe: Jev Router (typesafe/jev-router) Model Overview & Pricing](https://openrouter.ai/typesafe/jev-router) (Niêm yết 25/09/2026)
+- OpenRouter, [Free AI Models on OpenRouter & Rate Limit Policy](https://openrouter.ai/collections/free-models)
+- OpenRouter, [Jev Documentation & Community Decisions Guide](https://openrouter.ai/docs/guides/community/jev)
 - RuntimeWire, [TypeSafe's Jev Router picks models for free, with a claimed million-token window](https://runtimewire.com/article/typesafe-jev-router-openrouter-launch) (26/09/2026)
 - TipRanks, [Developer Contest Underscores Early Demand for Jev Model on OpenRouter](https://www.tipranks.com/news/private-companies/developer-contest-underscores-early-demand-for-jev-model-on-openrouter) (25/09/2026)
-- TypeSafe AI, [Jev: System One Model Specification and Routing Cookbook](https://typesafe.ai/docs/jev-router)
 
 <!-- lang:en -->
 
-If you have ever architected an application that interfaces with multiple LLM providers concurrently, you know the enduring friction of **Model Routing**:
-- Bind a frontier heavyweight like Claude Opus 5.5 or GPT-6 Sol to every single user query, and your monthly infrastructure bill skyrockets while users endure multi-second delays for trivial conversational greetings.
-- Conversely, force all traffic through budget tiers like GPT-6 Luna or Gemini Flash, and your system fractures the moment an edge case demands multi-step reasoning.
-- Hand-roll custom routing heuristics using regex keyword checks or verbose switch-case statements, and your codebase quickly degenerates into brittle, unmaintainable spaghetti.
+If you regularly route inference requests through OpenRouter, a notable infrastructure update quietly landed this week: **As of September 25, 2026, OpenRouter officially listed the `typesafe/jev-router` endpoint, offering it completely FREE ($0.00 / 1M tokens).**
 
-On September 25, 2026, **OpenRouter**—the premier unified API gateway for frontier AI models—formally listed a new endpoint designed to tackle this operational challenge: **`typesafe/jev-router`**.
+This deployment represents a joint integration between OpenRouter and Diogo Almeida’s TypeSafe AI, embedding the **Jev** structured decision engine directly into the API gateway tier to function as a dynamic traffic controller.
 
-Rather than relying on static heuristic rules, this endpoint embeds TypeSafe AI’s **Jev decision model** directly into the gateway tier, effectively deploying a dedicated "traffic controller" for incoming API payloads.
+Featuring a massive **1,000,000-token context window** and a zero-dollar routing price tag, it presents a compelling opportunity for engineering teams to experiment with ambient decision routing without incurring middleware surcharges. But what does "Free" actually mean under OpenRouter's policies, what are the daily rate limits, and what technical trade-offs must you evaluate?
 
 ![OpenRouter Lists typesafe/jev-router](/images/posts/openrouter-niem-yet-typesafe-jev-router/cover.jpg)
 
-## 1. How Does typesafe/jev-router Actually Work?
+## 1. Dissecting the Pricing Mechanics: What Is Actually Free?
 
-First, an essential architectural distinction: **`typesafe/jev-router` is not a generative language model**. It does not draft prose, generate code snippets, or resolve mathematical equations. It functions as a **context-aware intelligent routing proxy**.
+Developers glancing at the OpenRouter pricing table might wonder: *If base Jev charges for inputs, why is Jev Router listed as $0?*
 
-When an application dispatches an HTTP request to OpenRouter specifying `model: "typesafe/jev-router"`, the request lifecycle proceeds as follows:
-1. **Context Ingestion:** The gateway ingests the conversational array, supporting a massive context window of up to **1,000,000 tokens**.
-2. **System One Deliberation:** Instead of invoking a heavy LLM, OpenRouter routes the conversational context through TypeSafe's **Jev** engine. Because Jev is a specialized System One architecture designed to return calibrated typed choices within sub-100ms latencies, it rapidly evaluates prompt semantics to resolve two parameters:
-   - **Target Model Selection:** Does this prompt represent a lightweight task (route to Luna or Haiku), a standard business workflow (route to Sol or Sonnet), or a complex multi-step reasoning requirement (route to Opus, Astra, or o1 Pro)?
-   - **Reasoning Effort Calibration:** If the target destination supports variable chain-of-thought budgets (such as Extended Thinking), Jev determines the optimal reasoning effort required, preventing token wastage on straightforward inputs.
-3. **Execution & Upstream Streaming:** OpenRouter seamlessly forwards the payload to the designated provider and streams the completion back to the client using the standard OpenAI-compatible API format.
+Here is the exact cost breakdown:
+
+### Base Jev 1.13 vs. Jev Router on OpenRouter
+1. **Base Jev 1.13 (`typesafe/jev-1.13`):**
+   - The standalone System One model that outputs typed decisions.
+   - Listed pricing: **$0.042 per million input tokens**, with free output tokens ($0). You invoke Jev directly within your codebase for custom classification, verification, or triage.
+2. **Jev Router (`typesafe/jev-router` - Listed September 25, 2026):**
+   - Listed pricing on OpenRouter: **$0.00 / 1M input tokens** and **$0.00 / 1M output tokens**.
+   - OpenRouter charges **zero markup** for the upstream prompt analysis or the model-selection pass performed by Jev.
+   - The official listing explicitly states: *"This model is free to use"*.
+
+In short: **The cognitive deliberation pass required to evaluate prompt complexity and select an execution model is completely subsidized.**
 
 ![Routing Workflow of typesafe/jev-router](/images/posts/openrouter-niem-yet-typesafe-jev-router/diagram-router-workflow.jpg)
 
-## 2. Listing Specifications and Unit Economics
+---
 
-On OpenRouter’s registry, `typesafe/jev-router` displays two notable specifications:
-- **Context Window:** 1,000,000 tokens—matching top-tier frontier standards.
-- **Routing Token Surcharge:** **$0 / $0 per million tokens**.
+## 2. OpenRouter Free-Tier Rate Limits: 50 vs. 1,000 Requests Daily
 
-OpenRouter imposes zero routing fee markup for Jev’s decision-making pass. Applications are billed strictly for the upstream tokens consumed by whichever target model ultimately fulfills the generation.
+Because `typesafe/jev-router` is designated as a `:free` tier model, it falls under OpenRouter's **free-model platform rate limits**:
 
-In theory, the economic proposition is compelling: you gain an intelligent, ambient decision engine orchestrating traffic at the perimeter without incurring intermediate routing surcharges.
+| Account Tier | Max Throughput | Daily Allocation | Practical Context |
+|---|---|---|---|
+| **Standard Free Account** (Zero lifetime deposits) | **20 requests / min** | **50 requests / day** | Ideal for localized prototyping and prompt tests |
+| **Funded Account** (Lifetime deposit $\ge$ $10) | **20 requests / min** | **1,000 requests / day** | Robust enough for internal team staging and automation |
 
-## 3. Pragmatic Reservations: The Absence of Empirical Production Data
+> [!TIP]
+> To unlock the generous 1,000 free daily request quota for `typesafe/jev-router`, you only need to top up your OpenRouter account balance with at least $10 once. That $10 deposit remains intact in your balance for paid models, while permanently expanding your daily free-model allowance.
 
-While the architectural blueprint is persuasive, systems engineers must approach novel gateway dependencies with disciplined skepticism. There are three key operational considerations:
+---
 
-### Unknown 1: Lack of Independent Production Benchmarks
-OpenRouter has long provided an automated fallback endpoint via **`openrouter/auto`** (which balances throughput, cost, and provider uptime).
-Currently, zero independent empirical datasets compare `jev-router` against legacy auto-routing. We do not yet possess production-grade visibility into its real-world routing precision, aggregate cost savings across diverse prompt distributions, or variance in completion quality over tens of thousands of requests.
+## 3. What Does typesafe/jev-router Do at the Gateway?
 
-### Unknown 2: Compounded Time-to-First-Token (TTFT)
-Even though Jev operates within an enviable sub-100ms latency bracket, inserting an upstream evaluation pass unavoidably adds overhead to **Time to First Token (TTFT)**.
-For real-time voice interfaces or conversational web apps where user experience degrades if latency exceeds 300ms, dedicating 50 to 100 milliseconds purely to gateway routing could introduce perceptible lag.
+When a client application submits a standard chat completion request:
 
-### Unknown 3: Misclassification Risks on Ambiguous Edge Cases
-Every automated dispatch mechanism risks classification failure:
-- **Under-routing:** A user submits a query that appears superficially simple (e.g., a brief code snippet concealing a subtle race condition). Jev mischaracterizes the request as routine syntax formatting and delegates it to a lightweight budget tier, yielding a broken answer.
-- **Over-routing:** Conversely, a verbose prompt consisting of benign administrative notes is misjudged as high complexity and dispatched to Claude Opus 5.5, unnecessarily inflating operational expenses.
+```json
+{
+  "model": "typesafe/jev-router",
+  "messages": [
+    { "role": "user", "content": "Analyze this IIS deadlock stack trace..." }
+  ]
+}
+```
 
-## Backend Architecture Takeaways
+OpenRouter executes a three-phase lifecycle:
+1. **Context Ingestion (Up to 1M Tokens):** The conversational history is loaded into memory buffers.
+2. **Sub-100ms System One Deliberation:** TypeSafe's Jev model evaluates prompt semantics to determine two parameters:
+   - *Target Model Tiering:* Routine queries (formatting, simple summaries) route to cost-efficient models (GPT-6 Luna, Claude Haiku, Gemini Flash); moderate business logic routes to mid-tier engines (GPT-6 Sol, Claude Sonnet); while deeply nested reasoning routes to frontier models (Claude Opus 5.5, GPT-6 Astra, o1 Pro).
+   - *Adaptive Reasoning Budget:* Calibrates chain-of-thought depth so extended deliberation tokens are allocated only when strictly necessary.
+3. **Execution & Upstream Streaming:** OpenRouter seamlessly proxies the request to the chosen destination and streams the completion back to the client.
 
-Beyond its immediate utility, OpenRouter’s adoption of `typesafe/jev-router` highlights a broader architectural trend: **the formal decoupling of System One and System Two responsibilities within AI software infrastructure**.
+---
 
-Historically, monolithic LLMs were forced to act as all-purpose workhorses—responsible for classifying intents, policing safety guardrails, structuring JSON, and generating prose within a single bloated forward pass.
+## 4. Technical Caveats for Production Teams
 
-Modern architectures are rapidly converging on modular specialization:
-- **The Gateway Layer (System One):** Fast, non-generative decision engines like Jev or CLM-8B act as perimeter sentinels—handling dynamic traffic routing, guardrail verification, and triage in single-digit milliseconds.
-- **The Execution Layer (System Two):** Massive reasoning models step in only when complex deduction, synthesis, or creative generation is explicitly demanded.
+While zero-cost smart routing sounds ideal, disciplined systems engineers must weigh two critical realities:
 
-For developer sandboxes and exploratory prototypes, `typesafe/jev-router` offers a zero-friction integration worth immediate experimentation. For production environments with strict SLAs, monitoring empirical routing fidelity and latency distributions over the coming weeks will determine whether dynamic decision routers are truly ready for mission-critical workloads.
+### Caveat 1: Absence of Empirical Production Data
+OpenRouter has long operated **`openrouter/auto`** (an established heuristic router balancing provider latency, pricing, and availability).
+As of late September 2026, there is **zero independent empirical benchmark data** proving `typesafe/jev-router` delivers superior cost-to-quality ratios over legacy auto-routing. We do not yet know its real-world misclassification rate—specifically, whether it risks *over-routing* simple verbose prompts to expensive models or *under-routing* deceptive edge cases to budget tiers.
+
+### Caveat 2: Compounded Latency on Time-to-First-Token (TTFT)
+Even though Jev operates within an agile 70–100ms bracket, inserting an intermediate classification pass inherently inflates overall **TTFT**.
+For real-time voice agents or conversational interfaces requiring sub-300ms responsiveness, dedicating an extra 100 milliseconds purely to gateway routing can produce a perceptible hitch in responsiveness.
+
+---
+
+## Practical Takeaway
+
+- **For Development & Prototyping:** `typesafe/jev-router` is an exceptional zero-cost utility. Gaining a 1M context window and free intelligent dispatch within a 50 to 1,000 request/day quota makes it an immediate win for experimental projects.
+- **For Production Environments:** Adopt a canary deployment strategy—routing 5% to 10% of background traffic through `jev-router`, auditing destination selections and billing logs for two weeks before committing primary production pipelines to this new paradigm.
 
 ## References
 
-- OpenRouter, [TypeSafe: Jev Router (typesafe/jev-router) Model Overview & Documentation](https://openrouter.ai/typesafe/jev-router) (Sep 25, 2026)
-- OpenRouter, [Jev Documentation & Decisions API Community Guide](https://openrouter.ai/docs/guides/community/jev)
+- OpenRouter, [TypeSafe: Jev Router (typesafe/jev-router) Model Overview & Pricing](https://openrouter.ai/typesafe/jev-router) (Listed Sep 25, 2026)
+- OpenRouter, [Free AI Models on OpenRouter & Rate Limit Policy](https://openrouter.ai/collections/free-models)
+- OpenRouter, [Jev Documentation & Community Decisions Guide](https://openrouter.ai/docs/guides/community/jev)
 - RuntimeWire, [TypeSafe's Jev Router picks models for free, with a claimed million-token window](https://runtimewire.com/article/typesafe-jev-router-openrouter-launch) (Sep 26, 2026)
 - TipRanks, [Developer Contest Underscores Early Demand for Jev Model on OpenRouter](https://www.tipranks.com/news/private-companies/developer-contest-underscores-early-demand-for-jev-model-on-openrouter) (Sep 25, 2026)
-- TypeSafe AI, [Jev: System One Model Specification and Routing Cookbook](https://typesafe.ai/docs/jev-router)
