@@ -28,8 +28,8 @@ Nhìn suốt chiều dài lịch sử nhân loại, sự phát triển không di
 ## 1. Bản đồ tổng thể: Hai trục tiến hóa của nền văn minh
 
 Nếu gạt bỏ những chi tiết vụn vặt và nhìn từ độ cao mười nghìn mét, toàn bộ lịch sử công nghệ của con người chỉ xoay quanh đúng hai trục then chốt:
-1. **Đòn bẩy sức lao động:** Chúng ta lấy năng lượng từ đâu để biến đổi thế giới vật chất? (Từ cơ bắp người $\rightarrow$ gia súc $\rightarrow$ than đá & hơi nước $\rightarrow$ điện & dầu mỏ $\rightarrow$ vi xử lý $\rightarrow$ mạng neuron nhân tạo).
-2. **Năng lực truyền tải & lưu trữ thông tin:** Chúng ta đóng gói và chuyển giao kinh nghiệm, tri thức nhanh đến mức nào? (Từ truyền miệng $\rightarrow$ chữ viết tượng hình $\rightarrow$ kỹ thuật in ấn Gutenberg $\rightarrow$ điện tín & sóng radio $\rightarrow$ Internet cáp quang $\rightarrow$ giao diện ngôn ngữ tự nhiên).
+1. **Đòn bẩy sức lao động:** Chúng ta lấy năng lượng từ đâu để biến đổi thế giới vật chất? (Từ cơ bắp người → gia súc → than đá & hơi nước → điện & dầu mỏ → vi xử lý → mạng neuron nhân tạo).
+2. **Năng lực truyền tải & lưu trữ thông tin:** Chúng ta đóng gói và chuyển giao kinh nghiệm, tri thức nhanh đến mức nào? (Từ truyền miệng → chữ viết tượng hình → kỹ thuật in ấn Gutenberg → điện tín & sóng radio → Internet cáp quang → giao diện ngôn ngữ tự nhiên).
 
 Mỗi khi hai trục này giao nhau ở một điểm đột phá mới, một cuộc cách mạng lại bùng nổ.
 
@@ -135,8 +135,8 @@ Throughout human history, societal evolution has never proceeded in a smooth lin
 ## 1. The Master Map: Civilization's Two Core Axes
 
 Stripped of historical trivia, every technological leap across human history has pivoted around two fundamental axes:
-1. **Labor Leverage:** Where do we extract the energy required to transform the physical world? (Human muscle $\rightarrow$ draft animals $\rightarrow$ coal & steam $\rightarrow$ electricity & petroleum $\rightarrow$ silicon microprocessors $\rightarrow$ artificial neural networks).
-2. **Information Transmission & Storage:** How rapidly and cheaply can we encode, preserve, and transmit collective knowledge? (Oral folklore $\rightarrow$ cuneiform & papyrus $\rightarrow$ the Gutenberg movable-type press $\rightarrow$ telegraph & radio $\rightarrow$ fiber-optic Internet $\rightarrow$ ambient natural-language reasoning).
+1. **Labor Leverage:** Where do we extract the energy required to transform the physical world? (Human muscle → draft animals → coal & steam → electricity & petroleum → silicon microprocessors → artificial neural networks).
+2. **Information Transmission & Storage:** How rapidly and cheaply can we encode, preserve, and transmit collective knowledge? (Oral folklore → cuneiform & papyrus → the Gutenberg movable-type press → telegraph & radio → fiber-optic Internet → ambient natural-language reasoning).
 
 Whenever these two axes intersect at a radical inflection point, an industrial revolution erupts.
 
