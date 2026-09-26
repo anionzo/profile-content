@@ -8,7 +8,7 @@ tags: [ai, google, tools]
 cover: /images/posts/dang-ky-muse-khong-can-fake-vpn/cover.jpg
 excerpt: "Muse — personal AI agent của Meta — chỉ mở cho người dùng Mỹ từ 18 tuổi. Bài này đi đường vòng: để Gemini Spark điều khiển trình duyệt từ xa của Google điền form đăng ký hộ, thay vì dựng VPN giả và đối mặt với tài khoản bị khóa vĩnh viễn."
 excerptEn: "Muse, Meta's personal AI agent, is US-only and 18+. This post takes the long way around: instead of a fake VPN and a permanently banned account, let Gemini Spark drive Google's remote browser and fill in the signup form for you."
-status: draft
+status: published
 readingTimeOverride: null
 series: null
 canonicalUrl: null
